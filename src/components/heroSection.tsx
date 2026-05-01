@@ -32,7 +32,7 @@ function HeroSection() {
             <Button text={"Contact"} Icon={Phone} />
           </a>
           <a
-            href="/public/bulus-hamnu-resume.pdf"
+            href="public/bulus-hamnu-resume.pdf"
             download="Bulus-Hamnu-Resume.pdf"
           >
             <Button text={"Resume"} Icon={Download} />

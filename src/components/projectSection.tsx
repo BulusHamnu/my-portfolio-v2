@@ -1,4 +1,5 @@
 import ProjectCard from "./projectCard";
+import projects from "../data/projects";
 
 /* Projects Section */
 function ProjectsSection() {
@@ -6,9 +7,9 @@ function ProjectsSection() {
     <section id="projects-section" className="p-3 mt-12 mb-4">
       <h2 className="section-heading text-left">Projects</h2>
       <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3 grid-row-auto">
-        <ProjectCard />
-        <ProjectCard />
-        <ProjectCard />
+        {projects.map((project) => (
+          <ProjectCard project={project} />
+        ))}
       </div>
     </section>
   );
