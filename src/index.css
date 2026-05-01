@@ -41,7 +41,8 @@ body::before {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: var(--heading-font);
   font-weight: 400;
   color: var(--text-color);
@@ -115,15 +116,47 @@ header {
   transition: background-color 0.3s linear;
 }
 
-/* Primary btn */
-.button-primary {
-  background: #1a1a1a;
+/* Primary and Secondary btn*/
+.button-primary,
+.button-secondary {
   border: 1px solid #2a2a2a;
   color: white;
+  transition: background-color 0.3s linear;
 }
 
-.button-primary:hover {
+.button-primary {
+  background: #1a1a1a;
+}
+
+.button-secondary {
+  background: none;
+}
+
+.button-primary:hover,
+.button-secondary:hover {
   background: #222;
+}
+
+/* Section */
+.section-heading {
+  width: fit-content;
+  position: relative;
+  padding: 5px;
+  padding-left: 10px;
+  /* background-color: rgba(24, 24, 26, 0.623); */
+}
+
+.section-heading::before {
+  content: "";
+  display: block;
+  width: 3px;
+  height: 100%;
+  background-color: var(--text-color);
+  position: absolute;
+  top: 0%;
+  left: 0;
+  border-radius: 0.1rem 0;
+  z-index: 2;
 }
 
 /* Card */
