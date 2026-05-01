@@ -82,6 +82,13 @@ p {
 /* Nav Bar */
 header {
   z-index: 40;
+  background-color: none;
+  transition: background-color 0.3s ease-in;
+}
+
+header.active {
+  border-bottom: 0.15rem solid #919090;
+  background-color: #0f0f0f;
 }
 
 .main-navbar {
@@ -94,7 +101,7 @@ header {
 }
 
 .main-navbar.active {
-  top: 68px;
+  top: 58px;
   display: block;
 }
 

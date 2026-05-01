@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X } from "lucide-react";
 
 /* Header */
@@ -43,13 +43,32 @@ function LinkItem({ text }: { text: string }) {
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   function toogleMenu() {
     setIsOpen(!isOpen);
   }
 
   return (
-    <header className="h-15 flex flex-row justify-between items-center fixed top-0 w-full px-3 z-20">
+    <header
+      className={`h-15 flex flex-row justify-between items-center fixed top-0 w-full px-3 z-20 ${isOpen || isScrolled ? "active" : ""}`}
+    >
       <Logo />
       <Menu isOpen={isOpen} toogleMenu={toogleMenu} />
       <nav className={`main-navbar  ${isOpen ? "active" : ""}`}>

@@ -9,7 +9,6 @@ function ProjectsSection() {
         <ProjectCard />
         <ProjectCard />
         <ProjectCard />
-        <ProjectCard />
       </div>
     </section>
   );
