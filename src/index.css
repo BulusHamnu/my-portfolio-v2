@@ -2,18 +2,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 @import "tailwindcss";
 
+/* Default Styles */
 :root {
   --text-color: #ffffff;
   --bg-color: #080808;
   --text-font: "Arimo", sans-serif;
   --heading-font: "Ubuntu", sans-serif;
+  --container-width: 1440px;
 
   color: var(--text-color);
   background: radial-gradient(circle at 50% 30%, #111 0%, #080808 60%);
 
-  /* @media (max-width: 1024px) {
+  @media (max-width: 1024px) {
     font-size: 16px;
-  } */
+  }
 }
 
 body {
@@ -32,7 +34,7 @@ body::before {
 
 .container {
   margin: 0 auto;
-  width: 1440px;
+  width: var(--container-width);
   max-width: 100%;
   text-align: center;
   min-height: 100svh;
@@ -46,12 +48,12 @@ h2 {
 }
 
 h1 {
-  font-size: 56px;
+  font-size: 60px;
   letter-spacing: -1.68px;
-  margin: 32px 0;
+  margin: 25px 0;
 
   @media (max-width: 1024px) {
-    font-size: 36px;
+    font-size: 40px;
     margin: 20px 0;
   }
 }
@@ -73,5 +75,117 @@ p {
 
   @media (max-width: 1024px) {
     margin: 0 10px;
+  }
+}
+
+/* Nav Bar */
+header {
+  z-index: 40;
+}
+
+.main-navbar {
+  position: fixed;
+  top: 0;
+  display: none;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+
+.main-navbar.active {
+  top: 68px;
+  display: block;
+}
+
+.main-navbar > ul {
+  text-align: center;
+  background: radial-gradient(circle at 50% 30%, #0b0b0b 0%, #121010 60%);
+}
+
+.nav-link-item {
+  font-family: var(--text-font);
+  color: #919090;
+  display: inline;
+  width: 100%;
+}
+
+.nav-link-item:hover,
+.nav-menu:hover {
+  background: #222;
+  transition: background-color 0.3s linear;
+}
+
+/* Primary btn */
+.button-primary {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  color: white;
+}
+
+.button-primary:hover {
+  background: #222;
+}
+
+/* Card */
+.card {
+  background: linear-gradient(180deg, #121212 0%, #0d0d0d 100%);
+  border: 1px solid #1f1f1f;
+}
+
+/* Logo  */
+.logo {
+  font-family: var(--heading-font);
+  position: relative;
+  text-decoration: none;
+}
+
+.logo::before {
+  content: "";
+  display: block;
+  width: 60%;
+  height: 15%;
+  background-color: var(--text-color);
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border-radius: 0.1rem 0;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  header {
+    max-width: var(--container-width);
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .nav-link-item {
+    padding: 0.5rem;
+    display: block;
+    width: fit-content;
+  }
+
+  .nav-link-item:hover {
+    background: none;
+    color: var(--text-color);
+    transition: color 0.4s linear;
+  }
+
+  .main-navbar {
+    position: static;
+    display: block;
+    width: fit-content;
+  }
+
+  .main-navbar > ul {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    gap: 1.25rem;
+    width: fit-content;
+    align-items: center;
+    background: none;
   }
 }
