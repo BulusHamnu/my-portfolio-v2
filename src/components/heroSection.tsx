@@ -26,7 +26,7 @@ function HeroSection() {
         discuss potential collaborations and opportunities, feel free to reach
         out!
       </p>
-      <div className="m-3 lg:mx-0 lg:mt-8 mt-6 flex flex-col md:flex-row items-center md:justify-between p-2 lg:p-0">
+      <div className="m-3 lg:mx-0 lg:mt-8 mt-8 flex flex-col md:flex-row items-center md:justify-between p-2 lg:p-0">
         <div className="hero-btn-cont p-2 lg:p-0  flex flex-row gap-5 justify-center">
           <a href="#">
             <Button text={"Contact"} Icon={Phone} />
@@ -38,11 +38,11 @@ function HeroSection() {
             <Button text={"Resume"} Icon={Download} />
           </a>
         </div>
-        <div className="social-links mt-7 md:mt-0 flex flex-row justify-between w-40 items-center">
+        <div className="social-links mt-9 md:mt-0 flex flex-row justify-between w-50 items-center">
           <a href="https://github.com/BulusHamnu" target="_blank">
             <SiGithub
               className="hover:text-amber-500 transition-colors duration-300 hover:scale-125"
-              size={25}
+              size={28}
             />
           </a>
           <a
@@ -51,7 +51,7 @@ function HeroSection() {
           >
             <FaLinkedin
               className="hover:text-amber-500 transition-colors duration-300 hover:scale-125"
-              size={25}
+              size={28}
             />
           </a>
           <a
@@ -60,7 +60,7 @@ function HeroSection() {
           >
             <SiX
               className="hover:text-amber-500 transition-colors duration-300 hover:scale-125"
-              size={19}
+              size={24}
             />
           </a>
           <a
@@ -69,7 +69,7 @@ function HeroSection() {
           >
             <SiYoutube
               className="hover:text-amber-500 transition-colors duration-300 hover:scale-125"
-              size={30}
+              size={33}
             />
           </a>
         </div>

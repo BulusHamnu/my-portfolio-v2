@@ -106,7 +106,7 @@ header {
   font-family: var(--text-font);
   color: #919090;
   display: inline;
-  width: 100%;
+  padding-left: 1.5rem;
 }
 
 .nav-link-item:hover,
@@ -165,6 +165,7 @@ header {
     padding: 0.5rem;
     display: block;
     width: fit-content;
+    padding-left: 0;
   }
 
   .nav-link-item:hover {
