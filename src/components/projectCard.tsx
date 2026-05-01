@@ -18,7 +18,7 @@ function ProjectCard() {
           ))}
         </div>
       </div>
-      <p>
+      <p style={{ lineHeight: "28px" }}>
         TaskFlow is a full-featured task management application designed for
         small teams and solo developers. Users can create multiple projects, add
         tasks with descriptions and due dates, assign priorities (Low, Medium,

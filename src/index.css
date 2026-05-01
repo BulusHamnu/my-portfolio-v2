@@ -150,6 +150,7 @@ header.active {
   position: relative;
   padding: 5px;
   padding-left: 10px;
+  font-size: 1.7rem;
   /* background-color: rgba(24, 24, 26, 0.623); */
 }
 
@@ -228,5 +229,9 @@ header.active {
     width: fit-content;
     align-items: center;
     background: none;
+  }
+
+  .section-heading {
+    font-size: 2rem;
   }
 }
