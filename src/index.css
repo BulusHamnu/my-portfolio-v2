@@ -193,6 +193,11 @@ header.active {
   z-index: 2;
 }
 
+/* About me section */
+.about-tab.active {
+  border: 0.1rem solid rgb(134, 126, 11);
+}
+
 @media (min-width: 768px) {
   header {
     max-width: var(--container-width);

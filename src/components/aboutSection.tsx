@@ -1,0 +1,62 @@
+import { useState } from "react";
+import AboutPanel from "./aboutPanel";
+import EducationPanel from "./educationPanel";
+import ExpriencePanel from "./expriencePanel";
+
+function TabBtn({
+  text,
+  option,
+  currentPanel,
+  selectPanel,
+}: {
+  text: string;
+  option: string;
+  currentPanel: string;
+  selectPanel: (value: string) => void;
+}) {
+  return (
+    <button
+      onClick={() => selectPanel(option)}
+      className={`${currentPanel === option ? "active" : ""} about-tab flex flex-row no-wrap gap-2 button-secondary border rounded-sm px-5 lg:px-4 py-2 w-full cursor-pointer items-center justify-center text-sm md:text-lg`}
+    >
+      <span>{text}</span>
+    </button>
+  );
+}
+
+/* About Section */
+function AboutSection() {
+  const [currentPanel, selectPanel] = useState("about-me");
+
+  return (
+    <section id="projects-section" className="p-3 mt-13 mb-20">
+      <h2 className="section-heading text-left">About Me</h2>
+      <div className="tabs flex flex-row flex-nowrap gap-2 mt-7 mb-4 max-w-3xl">
+        <TabBtn
+          text="About Me"
+          option="about-me"
+          currentPanel={currentPanel}
+          selectPanel={selectPanel}
+        />
+        <TabBtn
+          text="Exprience"
+          option="experience"
+          currentPanel={currentPanel}
+          selectPanel={selectPanel}
+        />
+        <TabBtn
+          text="Education"
+          option="education"
+          currentPanel={currentPanel}
+          selectPanel={selectPanel}
+        />
+      </div>
+
+      {currentPanel === "about-me" && <AboutPanel />}
+      {currentPanel === "experience" && <ExpriencePanel />}
+      {currentPanel === "education" && <EducationPanel />}
+    </section>
+  );
+}
+
+export default AboutSection;
