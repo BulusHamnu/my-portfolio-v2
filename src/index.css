@@ -79,6 +79,11 @@ p {
   }
 }
 
+label {
+  font-family: var(--text-font);
+  font-weight: 500;
+}
+
 /* Nav Bar */
 header {
   z-index: 40;
@@ -129,6 +134,7 @@ header.active {
   border: 1px solid #2a2a2a;
   color: white;
   transition: background-color 0.3s linear;
+  cursor: pointer;
 }
 
 .button-primary {
