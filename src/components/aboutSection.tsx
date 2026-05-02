@@ -39,7 +39,7 @@ function AboutSection() {
           selectPanel={selectPanel}
         />
         <TabBtn
-          text="Exprience"
+          text="Expriences"
           option="experience"
           currentPanel={currentPanel}
           selectPanel={selectPanel}

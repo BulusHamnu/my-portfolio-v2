@@ -10,7 +10,7 @@ export const expriences: Timeline[] = [
       "Worked closely with the founder on building and improving product ideas, combining development and technical decision-making. Built and  managed application features using tools like Lovable, and contributedto backend development using Node.js, including setting up serverless functions and handling Stripe payment integration.",
   },
   {
-    date: "2022 - Till date",
+    date: "2022 - Present",
     title: "Backend Developer (Personal Projects)",
     organization: "Independent",
     description:
