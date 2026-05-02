@@ -1,13 +1,15 @@
+import { Whatsapp, Gmail, Discord } from "@thesvg/react";
+
 /* Contact Section */
 function ContactSection() {
   return (
     <section id="contact-section" className="p-3 mt-13 mb-20">
-      <h2 className="section-heading text-left">Contact Me</h2>
+      <h2 className="section-heading text-left">Contact</h2>
       <p style={{ marginTop: "25px" }} className="text-left">
         If you have a project, idea, or opportunity, feel free to reach out. I’m
         always open to working on something interesting.
       </p>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5">
         <form className="mt-5 flex flex-col flex-nowrap p-4 lg:p-0 gap-5">
           <div className="form-row flex flex-col flex-nowrap text-left gap-2">
             <label className="text-lg" htmlFor="name-box">
@@ -57,7 +59,41 @@ function ContactSection() {
             Send Message
           </button>
         </form>
-        <div className="contact-meduim">Hello World</div>
+        <div className="contact-meduim mt-5">
+          <div className="flex flex-row flex-nowrap gap-4 p-3">
+            <div className="p-4 rounded-lg bg-neutral-900">
+              <Whatsapp width={25} height={25} />
+            </div>
+            <div className="flex flex-col gap-1 items-start p-1">
+              <span className="text-stone-400 text-lg">Phone</span>
+              <a className="text-xl" href="tel:+234 705 925 2490">
+                +234 705 925 2490
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-row flex-nowrap gap-4 p-3">
+            <div className="p-4 rounded-lg bg-neutral-900">
+              <Gmail width={25} height={25} />
+            </div>
+            <div className="flex flex-col gap-1 items-start p-1">
+              <span className="text-stone-400 text-lg">Email</span>
+              <a className="text-xl" href="mailto:hamnubulus@gmail.com">
+                hamnubulus@gmail.com
+              </a>
+            </div>
+          </div>
+          <div className="flex flex-row flex-nowrap gap-4 p-3">
+            <div className="p-4 rounded-lg bg-neutral-900">
+              <Discord width={25} height={25} />
+            </div>
+            <div className="flex flex-col gap-1 items-start p-1">
+              <span className="text-stone-400 text-lg">Discord</span>
+              <a className="text-xl" href="#">
+                @bulushamnu
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
