@@ -137,6 +137,7 @@ header.active {
   cursor: pointer;
 }
 
+footer,
 .button-primary {
   background: #1a1a1a;
 }
