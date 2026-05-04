@@ -1,4 +1,5 @@
-import { Whatsapp, Gmail, Discord } from "@thesvg/react";
+import { Whatsapp, Gmail } from "@thesvg/react";
+import { SiCalendly } from "@icons-pack/react-simple-icons";
 
 /* Contact Section */
 function ContactSection() {
@@ -66,7 +67,11 @@ function ContactSection() {
             </div>
             <div className="flex flex-col gap-1 items-start p-1">
               <span className="text-stone-400 text-lg">Phone</span>
-              <a className="text-xl" href="tel:+234 705 925 2490">
+              <a
+                target="_blank"
+                className="text-xl"
+                href="tel:+234 705 925 2490"
+              >
                 +234 705 925 2490
               </a>
             </div>
@@ -77,19 +82,27 @@ function ContactSection() {
             </div>
             <div className="flex flex-col gap-1 items-start p-1">
               <span className="text-stone-400 text-lg">Email</span>
-              <a className="text-xl" href="mailto:hamnubulus@gmail.com">
+              <a
+                target="_blank"
+                className="text-xl"
+                href="mailto:hamnubulus@gmail.com"
+              >
                 hamnubulus@gmail.com
               </a>
             </div>
           </div>
           <div className="flex flex-row flex-nowrap gap-4 p-3">
             <div className="p-4 rounded-lg bg-neutral-900">
-              <Discord width={25} height={25} />
+              <SiCalendly width={27} height={27} />
             </div>
             <div className="flex flex-col gap-1 items-start p-1">
-              <span className="text-stone-400 text-lg">Discord</span>
-              <a className="text-xl" href="#">
-                @bulushamnu
+              <span className="text-stone-400 text-lg">Calendly</span>
+              <a
+                target="_blank"
+                className="text-xl"
+                href="https://calendly.com/hamnubulus/30min"
+              >
+                Book a call
               </a>
             </div>
           </div>

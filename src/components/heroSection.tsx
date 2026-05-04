@@ -20,15 +20,15 @@ function HeroSection() {
         Madu
       </h1>
       <p className="text-left sm:mx-2 leading-relaxed md:leading-snug lg:text-lg">
-        A passionate software developer with a strong interest in backend and
-        full-stack development. I have hands-on experience with HTML, CSS,
-        JavaScript, React.js, Python, and Node.js. If you’d like to connect or
-        discuss potential collaborations and opportunities, feel free to reach
-        out!
+        I build backend systems and APIs with Node.js. I like understanding how
+        things actually work, not just making them run. I focus on building
+        systems that are structured, reliable, and practical, and I’m always
+        improving how I approach backend development. If you’ve got something
+        interesting you’re building, feel free to reach out.
       </p>
       <div className="m-3 lg:mx-0 lg:mt-8 mt-8 flex flex-col md:flex-row items-center md:justify-between p-2 lg:p-0">
         <div className="hero-btn-cont p-2 lg:p-0  flex flex-row gap-5 justify-center">
-          <a href="#">
+          <a href="#contact-section">
             <Button text={"Contact"} Icon={Phone} />
           </a>
           <a
@@ -63,10 +63,7 @@ function HeroSection() {
               size={24}
             />
           </a>
-          <a
-            href="https://www.youtube.com/channel/UCkFZr0w1HbX4MPN6TjAJEuQ"
-            target="_blank"
-          >
+          <a href="https://youtube.com/@bulus_hamnu" target="_blank">
             <SiYoutube
               className="hover:text-amber-500 transition-colors duration-300 hover:scale-125"
               size={33}
