@@ -26,15 +26,15 @@ function TabBtn({
 
 /* About Section */
 function AboutSection() {
-  const [currentPanel, selectPanel] = useState("about-me");
+  const [currentPanel, selectPanel] = useState("about");
 
   return (
     <section id="about-section" className="p-3 mt-13 mb-20">
       <h2 className="section-heading text-left">About Me</h2>
       <div className="tabs flex flex-row flex-nowrap gap-2 mt-7 mb-4 max-w-3xl">
         <TabBtn
-          text="About Me"
-          option="about-me"
+          text="About"
+          option="about"
           currentPanel={currentPanel}
           selectPanel={selectPanel}
         />
@@ -52,7 +52,7 @@ function AboutSection() {
         />
       </div>
 
-      {currentPanel === "about-me" && <AboutPanel />}
+      {currentPanel === "about" && <AboutPanel />}
       {currentPanel === "experience" && <ExpriencePanel />}
       {currentPanel === "education" && <EducationPanel />}
     </section>
