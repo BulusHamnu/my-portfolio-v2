@@ -69,7 +69,7 @@ function ContactSection() {
               <span className="text-stone-400 text-lg">Phone</span>
               <a
                 target="_blank"
-                className="text-xl"
+                className="anchor text-xl"
                 href="tel:+234 705 925 2490"
               >
                 +234 705 925 2490
@@ -84,7 +84,7 @@ function ContactSection() {
               <span className="text-stone-400 text-lg">Email</span>
               <a
                 target="_blank"
-                className="text-xl"
+                className="anchor text-xl"
                 href="mailto:hamnubulus@gmail.com"
               >
                 hamnubulus@gmail.com
@@ -99,7 +99,7 @@ function ContactSection() {
               <span className="text-stone-400 text-lg">Calendly</span>
               <a
                 target="_blank"
-                className="text-xl"
+                className="anchor text-xl"
                 href="https://calendly.com/hamnubulus/30min"
               >
                 Book a call

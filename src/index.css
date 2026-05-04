@@ -96,6 +96,14 @@ header.active {
   background-color: #0f0f0f;
 }
 
+.anchor {
+  color: white;
+  transition: color 0.2s linear;
+}
+.anchor:hover {
+  color: #a4a1a1;
+}
+
 .main-navbar {
   position: fixed;
   top: 0;
@@ -178,6 +186,16 @@ footer,
 .card {
   background: linear-gradient(180deg, #121212 0%, #0d0d0d 100%);
   border: 1px solid #1f1f1f;
+  transition: box-shadow 0.3s ease;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.project-card:hover {
+  transform: translateY(-1%);
 }
 
 /* Logo  */
