@@ -29,13 +29,13 @@ function HeroSection() {
       <div className="m-3 lg:mx-0 lg:mt-8 mt-8 flex flex-col md:flex-row items-center md:justify-between p-2 lg:p-0">
         <div className="hero-btn-cont p-2 lg:p-0  flex flex-row gap-5 justify-center">
           <a href="#contact-section">
-            <Button text={"Contact"} Icon={Phone} />
+            <Button style="button-primary" text={"Contact"} Icon={Phone} />
           </a>
           <a
             href="public/bulus-hamnu-resume.pdf"
             download="Bulus-Hamnu-Resume.pdf"
           >
-            <Button text={"Resume"} Icon={Download} />
+            <Button style="button-secondary" text={"Resume"} Icon={Download} />
           </a>
         </div>
         <div className="social-links mt-9 md:mt-0 flex flex-row justify-between w-50 items-center">

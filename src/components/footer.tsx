@@ -13,7 +13,7 @@ function Footer() {
         className="anchor to-top-span flex flex-row flex-no-wrap items-center gap-1"
       >
         Back to Top
-        <span>
+        <span className="to-top-arrow">
           <ArrowBigUpIcon size={18} />
         </span>
       </a>
