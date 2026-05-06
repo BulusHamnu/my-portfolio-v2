@@ -1,22 +1,46 @@
 import { Whatsapp, Gmail } from "@thesvg/react";
 import { SiCalendly } from "@icons-pack/react-simple-icons";
-import { useForm, ValidationError } from "@formspree/react";
-import { useEffect, useRef } from "react";
+import { useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
+import env from "../config/env";
 
 /* Contact Section */
 function ContactSection() {
-  const [state, handleSubmit] = useForm("xlgzndpa");
   const formRef = useRef<HTMLFormElement>(null);
+  const [submiting, setSubmiting] = useState(false);
 
-  useEffect(() => {
-    if (state.succeeded) {
-      formRef.current?.reset();
-      toast.success("Message sent successfully!", {
-        duration: 5000,
+  const submitForm = (e: React.SubmitEvent<HTMLFormElement>) => {
+    setSubmiting(true);
+
+    fetch(env.FORM_SPREE_URL, {
+      method: "POST",
+      body: new FormData(e.target),
+      headers: {
+        Accept: "application/json",
+      },
+    })
+      .then(async (response) => {
+        if (response.ok) {
+          setSubmiting(false);
+
+          toast.success("Message sent successfully!", {
+            duration: 5000,
+            id: "contact-success",
+          });
+
+          formRef.current?.reset();
+        } else {
+          await response.json().then((data) => {
+            setSubmiting(false);
+            console.error("Error:", data);
+          });
+        }
+      })
+      .catch((error) => {
+        setSubmiting(false);
+        console.error("An error occured while sending form message:", error);
       });
-    }
-  }, [state.succeeded]);
+  };
 
   return (
     <section id="contact-section" className="p-3 mt-13 mb-20">
@@ -30,7 +54,7 @@ function ContactSection() {
           ref={formRef}
           onSubmit={(e) => {
             e.preventDefault();
-            void handleSubmit(e);
+            void submitForm(e);
           }}
           className="mt-5 flex flex-col flex-nowrap p-4 lg:p-0 gap-5"
         >
@@ -44,9 +68,8 @@ function ContactSection() {
               type="text"
               name="name"
               required
-              placeholder="Your name my lord ?"
+              placeholder="Name.."
             />
-            <ValidationError prefix="Name" field="name" errors={state.errors} />
           </div>
           <div className="form-row flex flex-col flex-nowrap text-left gap-2">
             <label className="text-lg" htmlFor="subject">
@@ -58,12 +81,7 @@ function ContactSection() {
               name="subject"
               type="text"
               required
-              placeholder="Is it work my lord ?"
-            />
-            <ValidationError
-              prefix="Subject"
-              field="subject"
-              errors={state.errors}
+              placeholder="Subject.."
             />
           </div>
           <div className="form-row flex flex-col flex-nowrap text-left gap-2">
@@ -76,12 +94,7 @@ function ContactSection() {
               name="email"
               type="email"
               required
-              placeholder="Your email pls.."
-            />
-            <ValidationError
-              prefix="Email"
-              field="email"
-              errors={state.errors}
+              placeholder="Email.."
             />
           </div>
           <div className="form-row flex flex-col flex-nowrap text-left gap-2">
@@ -93,20 +106,15 @@ function ContactSection() {
               name="message"
               id="message"
               required
-              placeholder="How can i help u, my lord?"
+              placeholder="Message.."
             ></textarea>
-            <ValidationError
-              prefix="Message"
-              field="message"
-              errors={state.errors}
-            />
           </div>
           <button
             className="button-primary h-14 rounded"
             type="submit"
-            disabled={state.submitting}
+            disabled={submiting}
           >
-            {state.submitting ? "Sending..." : "Send Message"}
+            {submiting ? "Sending..." : "Send Message"}
           </button>
           <Toaster />
         </form>
