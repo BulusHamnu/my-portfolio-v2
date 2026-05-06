@@ -2,6 +2,7 @@ import { Whatsapp, Gmail } from "@thesvg/react";
 import { SiCalendly } from "@icons-pack/react-simple-icons";
 import { useForm, ValidationError } from "@formspree/react";
 import { useEffect, useRef } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 /* Contact Section */
 function ContactSection() {
@@ -11,6 +12,9 @@ function ContactSection() {
   useEffect(() => {
     if (state.succeeded) {
       formRef.current?.reset();
+      toast.success("Message sent successfully!", {
+        duration: 5000,
+      });
     }
   }, [state.succeeded]);
 
@@ -104,7 +108,7 @@ function ContactSection() {
           >
             {state.submitting ? "Sending..." : "Send Message"}
           </button>
-          {state.succeeded ? "Message sent!" : ""}
+          <Toaster />
         </form>
         <div className="contact-meduim mt-5">
           <div className="flex flex-row flex-nowrap gap-4 p-3">
