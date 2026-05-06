@@ -9,7 +9,7 @@ function Footer() {
     >
       <p>&copy; {new Date().getFullYear()} Hamnu Bulus Madu</p>
       <a
-        href="#hero-section"
+        href="#hero"
         className="anchor to-top-span flex flex-row flex-no-wrap items-center gap-1"
       >
         Back to Top

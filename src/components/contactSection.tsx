@@ -43,7 +43,7 @@ function ContactSection() {
   };
 
   return (
-    <section id="contact-section" className="p-3 mt-13 mb-20">
+    <section id="contact" className="p-3 mt-13 mb-20">
       <h2 className="section-heading text-left">Contact</h2>
       <p style={{ marginTop: "25px" }} className="text-left">
         If you have a project, idea, or opportunity, feel free to reach out. I’m

@@ -8,7 +8,7 @@ import { SiYoutube } from "react-icons/si";
 /* Hero Section */
 function HeroSection() {
   return (
-    <section id="hero-section" className="pt-28  p-3">
+    <section id="hero" className="pt-28  p-3">
       <span
         style={{ fontSize: "12px" }}
         className="border-b-gray-700 px-4 py-1.5 rounded-2xl bg-gray-900 text-shadow-sm m-3"
@@ -28,7 +28,7 @@ function HeroSection() {
       </p>
       <div className="m-3 lg:mx-0 lg:mt-8 mt-8 flex flex-col md:flex-row items-center md:justify-between p-2 lg:p-0">
         <div className="hero-btn-cont p-2 lg:p-0  flex flex-row gap-5 justify-center">
-          <a href="#contact-section">
+          <a href="#contact">
             <Button style="button-primary" text={"Contact"} Icon={Phone} />
           </a>
           <a

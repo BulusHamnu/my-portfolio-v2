@@ -29,7 +29,7 @@ function AboutSection() {
   const [currentPanel, selectPanel] = useState("about");
 
   return (
-    <section id="about-section" className="p-3 mt-13 mb-20">
+    <section id="about" className="p-3 mt-13 mb-20">
       <h2 className="section-heading text-left">About Me</h2>
       <div className="tabs flex flex-row flex-nowrap gap-2 mt-7 mb-4 max-w-3xl">
         <TabBtn

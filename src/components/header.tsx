@@ -35,9 +35,25 @@ function Menu({
   );
 }
 
-function LinkItem({ text }: { text: string }) {
+function LinkItem({
+  text,
+  to,
+  setIsOpen,
+}: {
+  text: string;
+  to: string;
+  setIsOpen: (value: boolean) => void;
+}) {
   return (
-    <li className="nav-link-item cursor-pointer px-2 py-3 text-left">{text}</li>
+    <li className="nav-link-item text-left">
+      <a
+        onClick={() => setIsOpen(false)}
+        className="w-full block px-2 py-3 cursor-pointer"
+        href={to}
+      >
+        {text}
+      </a>
+    </li>
   );
 }
 
@@ -73,11 +89,11 @@ function Header() {
       <Menu isOpen={isOpen} toogleMenu={toogleMenu} />
       <nav className={`main-navbar  ${isOpen ? "active" : ""}`}>
         <ul className="flex flex-col w-full justify-center">
-          <LinkItem text="Home" />
-          <LinkItem text="Projects" />
-          <LinkItem text="Skills" />
-          <LinkItem text="About Me" />
-          <LinkItem text="Contact" />
+          <LinkItem text="Home" to="#hero" setIsOpen={setIsOpen} />
+          <LinkItem text="Projects" to="#projects" setIsOpen={setIsOpen} />
+          <LinkItem text="Skills" to="#skills" setIsOpen={setIsOpen} />
+          <LinkItem text="About Me" to="#about" setIsOpen={setIsOpen} />
+          <LinkItem text="Contact" to="#contact" setIsOpen={setIsOpen} />
         </ul>
       </nav>
     </header>
