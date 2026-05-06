@@ -1,5 +1,6 @@
 /* Selected Project */
 export interface Project {
+  id: number;
   title: string;
   description: string;
   techStack: string[];
@@ -11,6 +12,7 @@ export interface Project {
 
 const projects: Project[] = [
   {
+    id: 1,
     title: "True Love App",
     description:
       "A web app for couples to book consultations, join a 6-week transformation program, access relationship courses, and upgrade to 1-on-1 coaching. Built with Node.js/Express, Stripe, Resend, and Lovable for front-end.",
@@ -28,6 +30,7 @@ const projects: Project[] = [
     },
   },
   {
+    id: 2,
     title: "Siwel Beats App",
     description:
       "A web application for a music producer to upload, stream, and sell beats. Includes user authentication, audio streaming (preview vs full), cart and order system, and file storage handling. Built with Node.js/Express, MongoDB, Supabase, and BullMQ. Frontend in progress.",
@@ -45,6 +48,7 @@ const projects: Project[] = [
     },
   },
   {
+    id: 3,
     title: "Svg Projects Card",
     description:
       "An elegant API that queries GitHub repositories and generates beautiful SVG visualizations that you can embed anywhere - perfect for your README profiles.",

@@ -24,8 +24,11 @@ function SkillCategory({
         <h3 className="text-lg md:text-2xl">{category}</h3>
       </div>
       <div className="skills-cont flex flex-row flex-wrap mt-4 gap-4 md:gap-6">
-        {skillSet.map((skill) => (
-          <span className="flex py-2 px-5 text-sm rounded-md border border-gray-800 text-stone-400 gap-2">
+        {skillSet.map((skill, index) => (
+          <span
+            key={index}
+            className="flex py-2 px-5 text-sm rounded-md border border-gray-800 text-stone-400 gap-2"
+          >
             <skill.icon width={20} height={20} />
             {skill.name}
           </span>

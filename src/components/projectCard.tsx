@@ -10,8 +10,11 @@ function ProjectCard({ project }: { project: Project }) {
           {project.title}
         </h3>
         <div className="project-tech-stack flex flex-row flex-wrap items-start gap-2 mt-3 mb-2">
-          {project.techStack.map((tech) => (
-            <span className="tech py-0.5 px-5 text-sm rounded-md border border-gray-800 text-stone-400">
+          {project.techStack.map((tech, index) => (
+            <span
+              key={index}
+              className="tech py-0.5 px-5 text-sm rounded-md border border-gray-800 text-stone-400"
+            >
               {tech}
             </span>
           ))}
