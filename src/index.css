@@ -3,6 +3,10 @@
 @import "tailwindcss";
 
 /* Default Styles */
+* {
+  box-sizing: border-box;
+}
+
 :root {
   --text-color: #ffffff;
   --bg-color: #080808;
@@ -92,9 +96,17 @@ label {
 /* Nav Bar */
 header {
   z-index: 40;
-  background-color: none;
   transition: background-color 0.2s linear;
 }
+
+/* header::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("/src/assets/noisy.png");
+  opacity: 0.08;
+  pointer-events: none;
+} */
 
 header.active {
   border-bottom: 0.15rem solid #919090;
@@ -128,7 +140,8 @@ header.active {
   background: radial-gradient(circle at 50% 30%, #0b0b0b 0%, #121010 60%);
 }
 
-.nav-link-item {
+.nav-link-item,
+.contact-link {
   font-family: var(--text-font);
   color: #919090;
   display: inline;
@@ -136,9 +149,10 @@ header.active {
 }
 
 .nav-link-item:hover,
-.nav-menu:hover {
+.nav-menu:hover,
+.contact-link:hover {
   background: #222;
-  transition: background-color 0.3s linear;
+  transition: background-color 0.2s linear;
 }
 
 /* Primary and Secondary btn*/
@@ -177,7 +191,6 @@ footer,
   padding: 5px;
   padding-left: 10px;
   font-size: 1.7rem;
-  /* background-color: rgba(24, 24, 26, 0.623); */
 }
 
 .section-heading::before {
@@ -247,7 +260,17 @@ footer,
     padding: 0.5rem;
     display: block;
     width: fit-content;
-    padding-left: 0;
+  }
+
+  .contact-link {
+    background-color: #a0ecce;
+    border-radius: 2rem;
+    padding: 7px 30px;
+    color: #2a2a2a;
+  }
+
+  .contact-link:hover {
+    background-color: #7ec6a9;
   }
 
   .nav-link-item:hover {

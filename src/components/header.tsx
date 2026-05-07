@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { X } from "lucide-react";
 
 /* Header */
@@ -48,7 +48,7 @@ function LinkItem({
     <li className="nav-link-item text-left">
       <a
         onClick={() => setIsOpen(false)}
-        className="w-full block px-2 py-3 cursor-pointer"
+        className="w-full block md:inline px-2 py-3 md:p-0 cursor-pointer"
         href={to}
       >
         {text}
@@ -60,6 +60,7 @@ function LinkItem({
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const contactLinkRef = useRef<HTMLAnchorElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -92,8 +93,25 @@ function Header() {
           <LinkItem text="Home" to="#hero" setIsOpen={setIsOpen} />
           <LinkItem text="Projects" to="#projects" setIsOpen={setIsOpen} />
           <LinkItem text="Skills" to="#skills" setIsOpen={setIsOpen} />
+          <li
+            onClick={() => contactLinkRef.current?.click()}
+            className="contact-link text-left cursor-pointer"
+          >
+            <a
+              ref={contactLinkRef}
+              onClick={() => setIsOpen(false)}
+              className="w-full block md:inline px-2 py-3 md:p-0"
+              href="#contact"
+            >
+              Contact
+            </a>
+          </li>
+          {/* <LinkItem
+            text="Contact"
+            to="#contact"
+            setIsOpen={setIsOpen}
+          /> */}
           <LinkItem text="About Me" to="#about" setIsOpen={setIsOpen} />
-          <LinkItem text="Contact" to="#contact" setIsOpen={setIsOpen} />
         </ul>
       </nav>
     </header>
