@@ -99,15 +99,6 @@ header {
   transition: background-color 0.2s linear;
 }
 
-/* header::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background-image: url("/src/assets/noisy.png");
-  opacity: 0.08;
-  pointer-events: none;
-} */
-
 header.active {
   border-bottom: 0.15rem solid #919090;
   background-color: #0f0f0f;
@@ -146,6 +137,16 @@ header.active {
   color: #919090;
   display: inline;
   padding-left: 1.5rem;
+}
+
+.nav-link-item > a.active,
+.contact-link > a.active {
+  color: #a0ecce;
+}
+
+.nav-link-item > a,
+.contact-link > a {
+  transition: color 0.2s ease-in;
 }
 
 .nav-link-item:hover,
@@ -273,10 +274,14 @@ footer,
     background-color: #7ec6a9;
   }
 
+  .contact-link:has(> a.active) {
+    background-color: #14212e;
+  }
+
   .nav-link-item:hover {
     background: none;
     color: var(--text-color);
-    transition: color 0.4s linear;
+    transition: color 0.2s ease-in;
   }
 
   .main-navbar {

@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { X } from "lucide-react";
+import useActiveSection from "../hooks/useActiveSession";
 
 /* Header */
 function Logo() {
@@ -20,7 +21,7 @@ function Menu({
   return (
     <div
       onClick={toogleMenu}
-      className="rounded nav-menu  cursor-pointer  p-1.5"
+      className="rounded nav-menu cursor-pointer  p-1.5"
     >
       {isOpen ? (
         <X size={30} />
@@ -39,17 +40,19 @@ function LinkItem({
   text,
   to,
   setIsOpen,
+  activeSection,
 }: {
   text: string;
   to: string;
   setIsOpen: (value: boolean) => void;
+  activeSection: string;
 }) {
   return (
     <li className="nav-link-item text-left">
       <a
         onClick={() => setIsOpen(false)}
-        className="w-full block md:inline px-2 py-3 md:p-0 cursor-pointer"
-        href={to}
+        className={`${activeSection === to ? "active" : ""} w-full block md:inline px-2 py-3 md:p-0 cursor-pointer`}
+        href={`#${to}`}
       >
         {text}
       </a>
@@ -61,6 +64,13 @@ function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const contactLinkRef = useRef<HTMLAnchorElement>(null);
+  const activeSection = useActiveSection([
+    "contact",
+    "hero",
+    "projects",
+    "skills",
+    "about",
+  ]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -90,9 +100,31 @@ function Header() {
       <Menu isOpen={isOpen} toogleMenu={toogleMenu} />
       <nav className={`main-navbar  ${isOpen ? "active" : ""}`}>
         <ul className="flex flex-col w-full justify-center">
-          <LinkItem text="Home" to="#hero" setIsOpen={setIsOpen} />
-          <LinkItem text="Projects" to="#projects" setIsOpen={setIsOpen} />
-          <LinkItem text="Skills" to="#skills" setIsOpen={setIsOpen} />
+          <LinkItem
+            text="Home"
+            to="hero"
+            setIsOpen={setIsOpen}
+            activeSection={activeSection}
+          />
+          <LinkItem
+            text="Projects"
+            to="projects"
+            setIsOpen={setIsOpen}
+            activeSection={activeSection}
+          />
+          <LinkItem
+            text="Skills"
+            to="skills"
+            setIsOpen={setIsOpen}
+            activeSection={activeSection}
+          />
+          <LinkItem
+            text="About Me"
+            to="about"
+            setIsOpen={setIsOpen}
+            activeSection={activeSection}
+          />
+
           <li
             onClick={() => contactLinkRef.current?.click()}
             className="contact-link text-left cursor-pointer"
@@ -100,18 +132,12 @@ function Header() {
             <a
               ref={contactLinkRef}
               onClick={() => setIsOpen(false)}
-              className="w-full block md:inline px-2 py-3 md:p-0"
+              className={`${activeSection === "contact" ? "active" : ""} w-full block md:inline px-2 py-3 md:p-0`}
               href="#contact"
             >
               Contact
             </a>
           </li>
-          {/* <LinkItem
-            text="Contact"
-            to="#contact"
-            setIsOpen={setIsOpen}
-          /> */}
-          <LinkItem text="About Me" to="#about" setIsOpen={setIsOpen} />
         </ul>
       </nav>
     </header>
