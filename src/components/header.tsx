@@ -51,7 +51,7 @@ function LinkItem({
     <li className="nav-link-item text-left">
       <a
         onClick={() => setIsOpen(false)}
-        className={`${activeSection === to ? "active" : ""} w-full block md:inline px-2 py-3 md:p-0 cursor-pointer`}
+        className={`${activeSection === to ? "active" : ""} w-full block md:inline px-2 py-4 md:p-0 cursor-pointer`}
         href={`#${to}`}
       >
         {text}
@@ -132,7 +132,7 @@ function Header() {
             <a
               ref={contactLinkRef}
               onClick={() => setIsOpen(false)}
-              className={`${activeSection === "contact" ? "active" : ""} w-full block md:inline px-2 py-3 md:p-0`}
+              className={`${activeSection === "contact" ? "active" : ""} w-full block md:inline px-2 py-4 md:p-0`}
               href="#contact"
             >
               Contact
