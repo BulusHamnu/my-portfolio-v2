@@ -1,10 +1,19 @@
 import { MoveUpRight } from "lucide-react";
 import { type Project } from "../data/projects";
+import { motion } from "motion/react";
 
 /* Project Card */
 function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="project-card card h-full p-4 text-left grid grid-rows-[auto_1fr_auto] lg:grid-rows-[35%_1fr_auto] gap-2 overflow-hidden">
+    <motion.div
+      whileHover={{
+        translateY: -6,
+        boxShadow: "0 5px 15px rgba(255, 255, 255, 0.1)",
+        transition: { duration: 0.1 },
+      }}
+      // transition={{ duration: 0.3 }}
+      className="project-card card h-full p-4 text-left grid grid-rows-[auto_1fr_auto] lg:grid-rows-[35%_1fr_auto] gap-2 overflow-hidden"
+    >
       <div>
         <h3 className="text-center text-lg md:text-2xl font-bold mb-4">
           {project.title}
@@ -39,7 +48,7 @@ function ProjectCard({ project }: { project: Project }) {
           ""
         )}
       </div>
-    </div>
+    </motion.div>
   );
 }
 

@@ -170,12 +170,6 @@ footer,
   background: #1a1a1a;
 }
 
-.to-top-span:hover > .to-top-arrow {
-  transform: translateY(-20%);
-  transition: box-shadow 0.3s ease;
-  transition: transform 0.3s ease;
-}
-
 .button-secondary {
   background: none;
 }
@@ -213,14 +207,6 @@ footer,
   border: 1px solid #1f1f1f;
   transition: box-shadow 0.3s ease;
   transition: transform 0.3s ease;
-}
-
-.card:hover {
-  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
-}
-
-.project-card:hover {
-  transform: translateY(-1%);
 }
 
 /* Logo  */

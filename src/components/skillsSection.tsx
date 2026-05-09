@@ -5,6 +5,8 @@ import {
   databases,
   tools,
 } from "../data/skills";
+import { motion } from "motion/react";
+import { onViewVariants } from "../config/animations";
 
 /* Skills Section */
 function SkillCategory({
@@ -40,7 +42,14 @@ function SkillCategory({
 
 function SkillsSection() {
   return (
-    <section id="skills" className="p-3 mt-14 mb-7">
+    <motion.section
+      variants={onViewVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      id="skills"
+      className="p-3 mt-14 mb-7"
+    >
       <h2 className="section-heading text-left">Skills</h2>
       <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-11">
         <SkillCategory category="Languages" skillSet={languages} />
@@ -48,7 +57,7 @@ function SkillsSection() {
         <SkillCategory category="Databases" skillSet={databases} />
         <SkillCategory category="Tools" skillSet={tools} />
       </div>
-    </section>
+    </motion.section>
   );
 }
 

@@ -1,7 +1,14 @@
+import { motion } from "motion/react";
+
 /* About Me Panel */
 function AboutPanel() {
   return (
-    <div className="text-left mt-9">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.7 }}
+      className="text-left mt-9"
+    >
       <h3 className="text-lg md:text-2xl mt-3 mb-5">About Me 👨🏾‍💻</h3>
       <p>
         I’m a backend-focused developer. I enjoy building systems and
@@ -36,7 +43,7 @@ function AboutPanel() {
       <p style={{ marginTop: "10px" }} className="font-extrabold">
         I use Arch btw
       </p>
-    </div>
+    </motion.div>
   );
 }
 

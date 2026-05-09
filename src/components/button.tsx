@@ -1,4 +1,5 @@
 import { type LucideIcon } from "lucide-react";
+import { motion } from "motion/react";
 
 /* Button */
 function Button({
@@ -11,12 +12,12 @@ function Button({
   style: string;
 }) {
   return (
-    <button
+    <motion.button
       className={`${style} flex flex-row no-wrap gap-2  border rounded-sm px-5 lg:px-4 py-2  w-35 lg:w-30 cursor-pointer items-center justify-between`}
     >
       <span>{text}</span>
       <Icon size={22} />
-    </button>
+    </motion.button>
   );
 }
 

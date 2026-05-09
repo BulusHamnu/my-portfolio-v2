@@ -2,6 +2,8 @@ import { useState } from "react";
 import AboutPanel from "./aboutPanel";
 import EducationPanel from "./educationPanel";
 import ExpriencePanel from "./expriencePanel";
+import { motion } from "motion/react";
+import { onViewVariants } from "../config/animations";
 
 function TabBtn({
   text,
@@ -29,7 +31,14 @@ function AboutSection() {
   const [currentPanel, selectPanel] = useState("about");
 
   return (
-    <section id="about" className="p-3 mt-13 mb-20">
+    <motion.section
+      variants={onViewVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      id="about"
+      className="p-3 mt-13 mb-20"
+    >
       <h2 className="section-heading text-left">About Me</h2>
       <div className="tabs flex flex-row flex-nowrap gap-2 mt-7 mb-4 max-w-3xl">
         <TabBtn
@@ -55,7 +64,7 @@ function AboutSection() {
       {currentPanel === "about" && <AboutPanel />}
       {currentPanel === "experience" && <ExpriencePanel />}
       {currentPanel === "education" && <EducationPanel />}
-    </section>
+    </motion.section>
   );
 }
 

@@ -4,11 +4,27 @@ import { FaLinkedin } from "react-icons/fa";
 import { SiGithub } from "react-icons/si";
 import { SiX } from "react-icons/si";
 import { SiYoutube } from "react-icons/si";
+import { motion } from "motion/react";
+// import { onViewVariants } from "../config/animations";
 
 /* Hero Section */
 function HeroSection() {
   return (
-    <section id="hero" className="pt-28 p-3">
+    <motion.section
+      /* variants={onViewVariants} */
+      initial={{
+        opacity: 0,
+      }}
+      whileInView={{
+        opacity: 1,
+        transition: {
+          duration: 0.7,
+        },
+      }}
+      viewport={{ once: true }}
+      id="hero"
+      className="pt-28 p-3"
+    >
       <span
         style={{ fontSize: "12px" }}
         className="border-b-gray-700 px-4 py-1.5 rounded-2xl bg-gray-900 text-shadow-sm m-3"
@@ -41,7 +57,7 @@ function HeroSection() {
         <div className="social-links mt-9 md:mt-0 flex flex-row justify-between w-50 items-center">
           <a href="https://github.com/BulusHamnu" target="_blank">
             <SiGithub
-              className="hover:text-amber-500 transition-colors duration-300 hover:scale-125"
+              className="hover:text-amber-500 transition-colors duration-300 hover:scale-110"
               size={28}
             />
           </a>
@@ -71,7 +87,7 @@ function HeroSection() {
           </a>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 

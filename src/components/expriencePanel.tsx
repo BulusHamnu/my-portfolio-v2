@@ -1,10 +1,16 @@
 import TimelineCard from "./timelineCard";
 import { expriences } from "../data/expriences";
+import { motion } from "motion/react";
 
 /* Expriences Panel */
 function ExpriencePanel() {
   return (
-    <div className="text-left mt-9">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.7 }}
+      className="text-left mt-9"
+    >
       <p>
         I’m still early in my journey, but I’ve been actively building and
         learning through real projects and practical problem solving.
@@ -18,7 +24,7 @@ function ExpriencePanel() {
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

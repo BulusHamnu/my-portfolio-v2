@@ -3,6 +3,8 @@ import { SiCalendly } from "@icons-pack/react-simple-icons";
 import { useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import env from "../config/env";
+import { motion } from "motion/react";
+import { onViewVariants } from "../config/animations";
 
 /* Contact Section */
 function ContactSection() {
@@ -43,7 +45,14 @@ function ContactSection() {
   };
 
   return (
-    <section id="contact" className="p-3 mt-13 mb-20">
+    <motion.section
+      variants={onViewVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      id="contact"
+      className="p-3 mt-13 mb-20"
+    >
       <h2 className="section-heading text-left">Contact</h2>
       <p style={{ marginTop: "25px" }} className="text-left">
         If you have a project, idea, or opportunity, feel free to reach out. I’m
@@ -63,7 +72,7 @@ function ContactSection() {
               Name
             </label>
             <input
-              className="border border-gray-600 h-12 p-2 "
+              className="border border-gray-600 h-12 p-2 bg-neutral-900"
               id="name"
               type="text"
               name="name"
@@ -76,7 +85,7 @@ function ContactSection() {
               Subject
             </label>
             <input
-              className="border border-gray-600 h-12 p-2"
+              className="border border-gray-600 h-12 p-2 bg-neutral-900"
               id="subject"
               name="subject"
               type="text"
@@ -89,7 +98,7 @@ function ContactSection() {
               Email
             </label>
             <input
-              className="border border-gray-600 h-12 p-2"
+              className="border border-gray-600 h-12 p-2 bg-neutral-900"
               id="email"
               name="email"
               type="email"
@@ -102,20 +111,24 @@ function ContactSection() {
               Message
             </label>
             <textarea
-              className="border border-gray-600 h-45 p-2"
+              className="border border-gray-600 h-45 p-2 bg-neutral-900"
               name="message"
               id="message"
               required
               placeholder="Message.."
             ></textarea>
           </div>
-          <button
-            className="button-primary h-14 rounded"
+          <motion.button
+            whileHover={{
+              backgroundColor: "#8adfbc",
+              transition: { duration: 0.3 },
+            }}
+            className="text-gray-900 h-14 rounded bg-[#a0ecce] cursor-pointer"
             type="submit"
             disabled={submiting}
           >
             {submiting ? "Sending..." : "Send Message"}
-          </button>
+          </motion.button>
           <Toaster />
         </form>
         <div className="contact-meduim mt-5">
@@ -166,7 +179,7 @@ function ContactSection() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
 
