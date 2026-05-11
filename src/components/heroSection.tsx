@@ -48,8 +48,8 @@ function HeroSection() {
             <Button style="button-primary" text={"Contact"} Icon={Phone} />
           </a>
           <a
-            href="public/bulus-hamnu-resume.pdf"
-            download="Bulus-Hamnu-Resume.pdf"
+            href="Bulus_Hamnu_Backend_Developer_Resume.pdf"
+            download="Bulus_Hamnu_Backend_Developer_Resume.pdf"
           >
             <Button style="button-secondary" text={"Resume"} Icon={Download} />
           </a>

@@ -7,7 +7,7 @@ export const expriences: Timeline[] = [
     title: "Developer & Technical Consultant (Contract)",
     organization: "Exponential Enlightenment",
     description:
-      "Worked closely with the founder on building and improving product ideas, combining development and technical decision-making. Built and  managed application features using tools like Lovable, and contributed to backend development using Node.js, including setting up serverless functions and handling Stripe payment integration.",
+      "Worked closely with the founder on building and refining product ideas, contributing to technical planning, system structure, and application workflows across multiple projects. Built and managed application functionality, including backend system integration, Stripe payment integration, email sending workflows, serverless functions, notification flows, and backend service integration using Lovable and Node.js. Contributed to rapid product development by helping design application architecture, technical flows, and scalable feature structures for internal tools, landing pages, and digital product platforms.",
   },
   {
     date: "2022 - Present",
