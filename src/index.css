@@ -11,6 +11,7 @@
   --text-color: #ffffff;
   --bg-color: #080808;
   --text-font: "Arimo", sans-serif;
+  --body-text-color: #919090;
   --heading-font: "Ubuntu", sans-serif;
   --container-width: 1440px;
 
@@ -37,7 +38,7 @@ body::before {
   position: fixed;
   inset: 0;
   background-image: url("/src/assets/noisy.png");
-  opacity: 0.08;
+  opacity: 0.05;
   pointer-events: none;
 }
 
@@ -79,7 +80,7 @@ h2 {
 }
 p {
   font-family: var(--text-font);
-  color: #919090;
+  color: var(--body-text-color);
   font-weight: 500;
   margin: 0;
 
@@ -100,16 +101,17 @@ header {
 }
 
 header.active {
-  border-bottom: 0.15rem solid #919090;
+  border-bottom: 0.15rem solid var(--body-text-color);
   background-color: #0f0f0f;
 }
 
 .anchor {
-  color: white;
+  color: var(--body-text-color);
   transition: color 0.2s linear;
 }
+
 .anchor:hover {
-  color: #a4a1a1;
+  color: #cdc7c7;
 }
 
 .main-navbar {
@@ -260,8 +262,8 @@ footer,
     background-color: #7ec6a9;
   }
 
-  .contact-link:has(> a.active) {
-    background-color: #14212e;
+  .contact-link > a.active {
+    color: #2a2a2a;
   }
 
   .nav-link-item:hover {

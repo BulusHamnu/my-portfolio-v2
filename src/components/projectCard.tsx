@@ -31,14 +31,14 @@ function ProjectCard({ project }: { project: Project }) {
       </div>
       <p style={{ lineHeight: "28px" }}>{project.description}</p>
       <div className="flex flex-row w-full gap-3 mt-3">
-        <a href={project.links.githubUrl} className="w-full">
+        <a href={project.links.githubUrl} className="w-full" target="_blank">
           <button className="flex flex-row no-wrap gap-2 button-secondary border rounded-sm px-5 lg:px-4 py-2 w-full cursor-pointer items-center justify-center text-sm md:text-lg">
             <span>View Code</span>
             <MoveUpRight size={18} />
           </button>
         </a>
         {project.links.demoUrl ? (
-          <a href={project.links.demoUrl} className="w-full">
+          <a href={project.links.demoUrl} className="w-full" target="_blank">
             <button className="flex flex-row no-wrap gap-2 button-primary border rounded-sm px-5 lg:px-4 py-2 w-full cursor-pointer items-center justify-center text-sm md:text-lg">
               <span>Live Demo</span>
               <MoveUpRight size={18} />

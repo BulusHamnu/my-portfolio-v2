@@ -1,10 +1,51 @@
-import { Whatsapp, Gmail } from "@thesvg/react";
-import { SiCalendly } from "@icons-pack/react-simple-icons";
 import { useRef, useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
 import env from "../config/env";
 import { motion } from "motion/react";
 import { onViewVariants } from "../config/animations";
+import {
+  FaInstagram,
+  FaYoutube,
+  FaWhatsapp,
+  FaGithub,
+  FaLinkedin,
+} from "react-icons/fa";
+import { SiX } from "react-icons/si";
+import { type IconType } from "react-icons";
+
+function SocialLink({
+  Icon,
+  text,
+  to,
+}: {
+  Icon: IconType;
+  text: string;
+  to: string;
+}) {
+  const variants = {
+    initial: { x: 0 },
+    hover: { x: 4, transition: { duration: 0.3 } },
+  };
+
+  return (
+    <motion.a
+      initial="initial"
+      whileHover="hover"
+      target="_blank"
+      className="anchor text-xl flex flex-row flex-nowrap gap-4 mb-5 items-center"
+      href={to}
+    >
+      <Icon size={30} />
+      <motion.span
+        variants={variants}
+        className="capitalize inline-block text-sm"
+      >
+        {text}
+      </motion.span>
+      <span style={{ height: "1px" }} className="w-full bg-[#919090]"></span>
+    </motion.a>
+  );
+}
 
 /* Contact Section */
 function ContactSection() {
@@ -123,7 +164,7 @@ function ContactSection() {
               backgroundColor: "#8adfbc",
               transition: { duration: 0.3 },
             }}
-            className="text-gray-900 h-14 rounded bg-[#a0ecce] cursor-pointer"
+            className="text-gray-900 h-14 rounded bg-[#a0ecce] cursor-pointer disabled:cursor-not-allowed"
             type="submit"
             disabled={submiting}
           >
@@ -131,51 +172,44 @@ function ContactSection() {
           </motion.button>
           <Toaster />
         </form>
-        <div className="contact-meduim mt-5">
-          <div className="flex flex-row flex-nowrap gap-4 p-3">
-            <div className="p-4 rounded-lg bg-neutral-900">
-              <Whatsapp width={25} height={25} />
-            </div>
-            <div className="flex flex-col gap-1 items-start p-1">
-              <span className="text-stone-400 text-lg">Phone</span>
-              <a
-                target="_blank"
-                className="anchor text-xl"
-                href="tel:+234 705 925 2490"
-              >
-                +234 705 925 2490
-              </a>
-            </div>
-          </div>
-          <div className="flex flex-row flex-nowrap gap-4 p-3">
-            <div className="p-4 rounded-lg bg-neutral-900">
-              <Gmail width={25} height={25} />
-            </div>
-            <div className="flex flex-col gap-1 items-start p-1">
-              <span className="text-stone-400 text-lg">Email</span>
-              <a
-                target="_blank"
-                className="anchor text-xl"
-                href="mailto:hamnubulus@gmail.com"
-              >
-                hamnubulus@gmail.com
-              </a>
-            </div>
-          </div>
-          <div className="flex flex-row flex-nowrap gap-4 p-3">
-            <div className="p-4 rounded-lg bg-neutral-900">
-              <SiCalendly width={27} height={27} />
-            </div>
-            <div className="flex flex-col gap-1 items-start p-1">
-              <span className="text-stone-400 text-lg">Calendly</span>
-              <a
-                target="_blank"
-                className="anchor text-xl"
-                href="https://calendly.com/hamnubulus/30min"
-              >
-                Book a call
-              </a>
-            </div>
+        <div className="contact-meduim mt-5 px-3">
+          <h3
+            style={{ fontSize: "22px", color: "#f59e0b" }}
+            className="text-left my-2"
+          >
+            Find Me Online
+          </h3>
+          <div className="mt-4">
+            <SocialLink
+              Icon={FaWhatsapp}
+              text="WHATSAPP"
+              to="https://wa.me/2347059252490"
+            />
+            <SocialLink
+              Icon={FaInstagram}
+              text="INSTAGRAM"
+              to="https://www.instagram.com/demy_thekidd"
+            />
+            <SocialLink
+              Icon={SiX}
+              text="TWITTER"
+              to="https://x.com/bulushamnu?t=DruMHErbK2GRXdyNzD5pEw&s=09"
+            />
+            <SocialLink
+              Icon={FaYoutube}
+              text="YOUTUBE"
+              to="https://youtube.com/@bulus_hamnu"
+            />
+            <SocialLink
+              Icon={FaGithub}
+              text="GITHUB"
+              to="https://github.com/BulusHamnu"
+            />
+            <SocialLink
+              Icon={FaLinkedin}
+              text="LINKEDIN"
+              to="https://www.linkedin.com/in/bulus-hamnu-a2850a23b"
+            />
           </div>
         </div>
       </div>

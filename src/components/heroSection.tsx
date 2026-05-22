@@ -1,17 +1,13 @@
 import Button from "./button";
 import { Download, Phone } from "lucide-react";
-import { FaLinkedin } from "react-icons/fa";
-import { SiGithub } from "react-icons/si";
+import { FaLinkedin, FaGithub, FaYoutube } from "react-icons/fa";
 import { SiX } from "react-icons/si";
-import { SiYoutube } from "react-icons/si";
 import { motion } from "motion/react";
-// import { onViewVariants } from "../config/animations";
 
 /* Hero Section */
 function HeroSection() {
   return (
     <motion.section
-      /* variants={onViewVariants} */
       initial={{
         opacity: 0,
       }}
@@ -25,12 +21,12 @@ function HeroSection() {
       id="hero"
       className="pt-28 p-3"
     >
-      <span
+      {/* <span
         style={{ fontSize: "12px" }}
         className="border-b-gray-700 px-4 py-1.5 rounded-2xl bg-gray-900 text-shadow-sm m-3"
       >
         Backend Developer
-      </span>
+      </span> */}
       <h1 className="md:text-left">
         Hi, I'm <span className="text-amber-500">Hamnu Bulus</span> <br />
         Madu
@@ -56,7 +52,7 @@ function HeroSection() {
         </div>
         <div className="social-links mt-9 md:mt-0 flex flex-row justify-between w-50 items-center">
           <a href="https://github.com/BulusHamnu" target="_blank">
-            <SiGithub
+            <FaGithub
               className="hover:text-amber-500 transition-colors duration-300 hover:scale-110"
               size={28}
             />
@@ -80,7 +76,7 @@ function HeroSection() {
             />
           </a>
           <a href="https://youtube.com/@bulus_hamnu" target="_blank">
-            <SiYoutube
+            <FaYoutube
               className="hover:text-amber-500 transition-colors duration-300 hover:scale-125"
               size={33}
             />

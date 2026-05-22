@@ -2,6 +2,7 @@ import ProjectCard from "./projectCard";
 import projects from "../data/projects";
 import { motion } from "motion/react";
 import { onViewVariants } from "../config/animations";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 /* Projects Section */
 function ProjectsSection() {
@@ -19,6 +20,23 @@ function ProjectsSection() {
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
+      </div>
+      <div className="flex flex-row flex-nowrap justify-between items-center mt-4">
+        <motion.button
+          whileHover={{
+            color: "#f59e0b",
+            transition: { duration: 0.3 },
+          }}
+          disabled
+          className="text-[#919090] text-xs p-3 cursor-pointer disabled:cursor-not-allowed flex flex-row flex-nowrap gap-0.5 items-center"
+        >
+          <ChevronLeft size={17} />
+          PREV
+        </motion.button>
+        <motion.button className="text-white text-xs p-3 cursor-pointer disabled:cursor-not-allowed flex flex-row flex-nowrap gap-0.5 items-center">
+          NEXT
+          <ChevronRight size={17} />
+        </motion.button>
       </div>
     </motion.section>
   );
