@@ -1,6 +1,6 @@
 import ProjectCard from "./projectCard";
 import projects from "../data/projects";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { onViewVariants } from "../config/animations";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
@@ -33,11 +33,44 @@ function ProjectsSection() {
       className="p-3 mt-13 mb-20"
     >
       <h2 className="section-heading text-left">Projects</h2>
-      <div className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 grid-row-auto">
-        {selectedProjects.map((project) => (
-          <ProjectCard key={project.id} project={project} />
-        ))}
-      </div>
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentPage}
+          initial="hidden"
+          animate="visible"
+          exit="exit"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.1,
+              },
+            },
+            exit: {
+              opacity: 0,
+              transition: {
+                staggerChildren: 0.05,
+                staggerDirection: -1,
+              },
+            },
+          }}
+          className="mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 grid-row-auto"
+        >
+          {selectedProjects.map((project) => (
+            <motion.div
+              key={project.id}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: { opacity: 1, y: 0 },
+                exit: { opacity: 0, y: -30 },
+              }}
+            >
+              <ProjectCard project={project} />
+            </motion.div>
+          ))}
+        </motion.div>
+      </AnimatePresence>
       <div className="flex flex-row flex-nowrap justify-between items-center mt-4">
         <motion.button
           onClick={() => showPrevPage()}
