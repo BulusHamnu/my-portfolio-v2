@@ -11,14 +11,13 @@ function ProjectCard({ project }: { project: Project }) {
         boxShadow: "0 5px 15px rgba(255, 255, 255, 0.1)",
         transition: { duration: 0.1 },
       }}
-      // transition={{ duration: 0.3 }}
-      className="project-card card h-full p-4 text-left grid grid-rows-[auto_1fr_auto] lg:grid-rows-[35%_1fr_auto] gap-2 overflow-hidden"
+      className="project-card card h-full p-4 text-left grid grid-rows-[auto_1fr_auto]  gap-2 overflow-hidden"
     >
-      <div>
+      <div className="">
         <h3 className="text-center text-lg md:text-2xl font-bold mb-4">
           {project.title}
         </h3>
-        <div className="project-tech-stack flex flex-row flex-wrap items-start gap-2 mt-3 mb-2">
+        <div className="project-tech-stack flex flex-row flex-wrap items-start gap-2 mt-3 mb-2 py-2">
           {project.techStack.map((tech, index) => (
             <span
               key={index}

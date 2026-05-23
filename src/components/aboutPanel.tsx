@@ -41,7 +41,7 @@ function AboutPanel() {
         level and create tools that people actually rely on.
       </p>
       <p style={{ marginTop: "10px" }} className="font-extrabold">
-        I use Arch btw
+        I use Arch btw :)
       </p>
     </motion.div>
   );
