@@ -44,7 +44,7 @@ const projects: Project[] = [
     ],
     links: {
       githubUrl: "https://github.com/BulusHamnu/siwel-beats-app",
-      demoUrl: null,
+      demoUrl: "https://siwel-beats.vercel.app/",
     },
   },
   {

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { X } from "lucide-react";
 import useActiveSection from "../hooks/useActiveSession";
+import { motion } from "motion/react";
 
 /* Header */
 function Logo() {
@@ -88,59 +89,85 @@ function Header() {
     };
   }, []);
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isOpen]);
+
   function toogleMenu() {
     setIsOpen(!isOpen);
   }
 
   return (
-    <header
-      className={`h-15 flex flex-row justify-between items-center fixed top-0 w-full px-3 z-20 ${isOpen || isScrolled ? "active" : ""}`}
-    >
-      <Logo />
-      <Menu isOpen={isOpen} toogleMenu={toogleMenu} />
-      <nav className={`main-navbar  ${isOpen ? "active" : ""}`}>
-        <ul className="flex flex-col w-full justify-center">
-          <LinkItem
-            text="Home"
-            to="hero"
-            setIsOpen={setIsOpen}
-            activeSection={activeSection}
-          />
-          <LinkItem
-            text="Projects"
-            to="projects"
-            setIsOpen={setIsOpen}
-            activeSection={activeSection}
-          />
-          <LinkItem
-            text="Skills"
-            to="skills"
-            setIsOpen={setIsOpen}
-            activeSection={activeSection}
-          />
-          <LinkItem
-            text="About Me"
-            to="about"
-            setIsOpen={setIsOpen}
-            activeSection={activeSection}
-          />
+    <>
+      {isOpen ? (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.1 }}
+          onClick={() => toogleMenu()}
+          className={`fixed top-0 left-0 right-0 bottom-0 bg-[rgba(0,0,0,0.7)] z-30`}
+        ></motion.div>
+      ) : (
+        ""
+      )}
 
-          <li
-            onClick={() => contactLinkRef.current?.click()}
-            className="contact-link text-left cursor-pointer"
-          >
-            <a
-              ref={contactLinkRef}
-              onClick={() => setIsOpen(false)}
-              className={`${activeSection === "contact" ? "active" : ""} w-full block md:inline px-2 py-4 md:p-0`}
-              href="#contact"
+      <header
+        className={`h-15 flex flex-row justify-between items-center fixed top-0 w-full px-3 z-20 ${isOpen || isScrolled ? "active" : ""}`}
+      >
+        <Logo />
+        <Menu isOpen={isOpen} toogleMenu={toogleMenu} />
+        <nav className={`main-navbar  ${isOpen ? "active" : ""}`}>
+          <ul className="flex flex-col w-full justify-center">
+            <LinkItem
+              text="Home"
+              to="hero"
+              setIsOpen={setIsOpen}
+              activeSection={activeSection}
+            />
+            <LinkItem
+              text="Projects"
+              to="projects"
+              setIsOpen={setIsOpen}
+              activeSection={activeSection}
+            />
+            <LinkItem
+              text="Skills"
+              to="skills"
+              setIsOpen={setIsOpen}
+              activeSection={activeSection}
+            />
+            <LinkItem
+              text="About Me"
+              to="about"
+              setIsOpen={setIsOpen}
+              activeSection={activeSection}
+            />
+
+            <li
+              onClick={() => contactLinkRef.current?.click()}
+              className="contact-link text-left cursor-pointer"
             >
-              Contact
-            </a>
-          </li>
-        </ul>
-      </nav>
-    </header>
+              <a
+                ref={contactLinkRef}
+                onClick={() => setIsOpen(false)}
+                className={`${activeSection === "contact" ? "active" : ""} w-full block md:inline px-2 py-4 md:p-0`}
+                href="#contact"
+              >
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+    </>
   );
 }
 
