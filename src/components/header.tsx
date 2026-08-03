@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { X } from "lucide-react";
 import useActiveSection from "../hooks/useActiveSession";
 import { motion } from "motion/react";
+import { NavLink } from "react-router-dom";
 
 /* Header */
 function Logo() {
@@ -38,25 +39,27 @@ function Menu({
 }
 
 function LinkItem({
-  text,
+  placeholder,
   to,
+  sectionId,
   setIsOpen,
   activeSection,
 }: {
-  text: string;
+  placeholder: string;
   to: string;
+  sectionId: string;
   setIsOpen: (value: boolean) => void;
   activeSection: string;
 }) {
   return (
     <li className="nav-link-item text-left">
-      <a
+      <NavLink
+        to={to}
         onClick={() => setIsOpen(false)}
-        className={`${activeSection === to ? "active" : ""} w-full block md:inline px-2 py-4 md:p-0 cursor-pointer`}
-        href={`#${to}`}
+        className={`${activeSection === sectionId ? "text-[#a0ecce]" : ""} w-full block md:inline px-2 py-4 md:p-0 cursor-pointer`}
       >
-        {text}
-      </a>
+        {placeholder}
+      </NavLink>
     </li>
   );
 }
@@ -71,6 +74,7 @@ function Header() {
     "projects",
     "skills",
     "about",
+    "music",
   ]);
 
   useEffect(() => {
@@ -126,43 +130,59 @@ function Header() {
         <Menu isOpen={isOpen} toogleMenu={toogleMenu} />
         <nav className={`main-navbar  ${isOpen ? "active" : ""}`}>
           <ul className="flex flex-col w-full justify-center">
+            {/* Hero */}
             <LinkItem
-              text="Home"
-              to="hero"
+              placeholder="Home"
+              to="/#hero"
+              sectionId="hero"
               setIsOpen={setIsOpen}
               activeSection={activeSection}
             />
+            {/* Projects */}
             <LinkItem
-              text="Projects"
-              to="projects"
+              placeholder="Projects"
+              to="/#projects"
+              sectionId="projects"
               setIsOpen={setIsOpen}
               activeSection={activeSection}
             />
+            {/* Skills */}
             <LinkItem
-              text="Skills"
-              to="skills"
+              placeholder="Skills"
+              to="/#skills"
+              sectionId="skills"
               setIsOpen={setIsOpen}
               activeSection={activeSection}
             />
+            {/* About */}
             <LinkItem
-              text="About Me"
-              to="about"
+              placeholder="About Me"
+              to="/#about"
+              sectionId="about"
               setIsOpen={setIsOpen}
               activeSection={activeSection}
             />
-
+            {/* Music */}
+            <LinkItem
+              placeholder="Music"
+              to="/music"
+              sectionId="music"
+              setIsOpen={setIsOpen}
+              activeSection={activeSection}
+            />
+            {/* Contact */}
             <li
               onClick={() => contactLinkRef.current?.click()}
               className="contact-link text-left cursor-pointer"
             >
-              <a
+              <NavLink
                 ref={contactLinkRef}
+                to="/#contact"
                 onClick={() => setIsOpen(false)}
-                className={`${activeSection === "contact" ? "active" : ""} w-full block md:inline px-2 py-4 md:p-0`}
-                href="#contact"
+                className={`${activeSection === "contact" ? "text-[#a0ecce]" : ""} w-full block md:inline px-2 py-4 md:p-0`}
               >
                 Contact
-              </a>
+              </NavLink>
             </li>
           </ul>
         </nav>

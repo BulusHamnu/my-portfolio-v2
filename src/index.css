@@ -144,10 +144,10 @@ header.active {
   padding-left: 1.5rem;
 }
 
-.nav-link-item > a.active,
+/* .nav-link-item > a.active,
 .contact-link > a.active {
   color: #a0ecce;
-}
+} */
 
 .nav-link-item > a,
 .contact-link > a {

@@ -1,22 +1,17 @@
-import Header from "./components/header";
-import HeroSection from "./components/heroSection";
-import ProjectsSection from "./components/projectSection";
-import SkillsSection from "./components/skillsSection";
-import AboutSection from "./components/aboutSection";
-import ContactSection from "./components/contactSection";
-import Footer from "./components/footer";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/home";
+import Music from "./pages/music";
 
 /* Home */
 function App() {
   return (
     <div className="container">
-      <Header />
-      <HeroSection />
-      <ProjectsSection />
-      <SkillsSection />
-      <AboutSection />
-      <ContactSection />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/music" element={<Music />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

@@ -1,7 +1,16 @@
 import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 function useActiveSection(sectionIds: string[]) {
-  const [activeSection, setActiveSection] = useState<string>("hero");
+  const location = useLocation();
+
+  const [activeSection, setActiveSection] = useState<string>(() => {
+    return location.pathname === "/"
+      ? "hero"
+      : location.pathname === "/music"
+        ? "music"
+        : "";
+  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
