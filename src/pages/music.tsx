@@ -1,61 +1,153 @@
+import type { ReactNode } from "react";
 import Header from "../components/header";
+import {
+  Spotify,
+  // AppleMusic,
+  Soundcloud,
+  Audiomack,
+  Youtube,
+} from "@thesvg/react";
+import { SiApplemusic } from "react-icons/si";
+import Tracks, { getTrackBySlug } from "../data/music";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 /* Music Page */
+function PlatformLink({
+  children,
+  link,
+}: {
+  children: ReactNode;
+  link: string;
+}) {
+  return (
+    <a
+      href={link}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="button-primary w-full p-4 flex flex-row flex-nowrap gap-6 items-center"
+    >
+      {children}
+    </a>
+  );
+}
+
 function Music() {
+  const { slug } = useParams();
+
+  const [currentTrack, setCurrentTrack] = useState(() => {
+    return getTrackBySlug(slug);
+  });
+
+  useEffect(() => {
+    const changeTrack = () => {
+      setCurrentTrack(() => {
+        return getTrackBySlug(slug);
+      });
+    };
+
+    changeTrack();
+  }, [slug]);
+
+  const [singles] = useState(Tracks.filter((track) => track.type === "single"));
+  const [albums] = useState(Tracks.filter((track) => track.type === "album"));
+
   return (
     <>
       <Header />
-      <main className="pt-28 p-3" id="music">
-        <h1 style={{ fontSize: "30px" }} className="text-left">
-          Checkout Demy Thekidd new release!
-        </h1>
-        <p className="text-left">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-          condimentum lacus mi, ac iaculis diam condimentum eu. Nunc risus mi,
-          ultrices vel aliquet et, maximus a magna. Aenean vel enim tellus. Cras
-          nec lacus tempor, congue est quis, dictum eros. Integer ut consectetur
-          purus, vel dapibus augue. Duis laoreet fermentum suscipit. Sed egestas
-          ac nibh ac mollis. Ut elementum leo consectetur nisl tempor ornare.
-          Nunc faucibus metus eros, at volutpat magna mattis quis. Maecenas
-          vitae posuere mauris. Sed sed ante et augue hendrerit pretium.
-          Pellentesque posuere et justo id aliquet. Duis turpis lorem, accumsan
-          sit amet ultricies vel, iaculis vel mauris. Aenean quis elementum
-          nisi, sit amet consequat libero. Nulla vel enim sit amet nisi pharetra
-          auctor. Donec ullamcorper, arcu ac lobortis condimentum, purus massa
-          pharetra erat, et fermentum ex turpis id metus. Maecenas finibus nunc
-          non orci tempus tincidunt. Sed enim lectus, facilisis et lacinia ac,
-          congue quis risus. Etiam sit amet imperdiet magna. Nulla et nulla
-          velit. Pellentesque ut vehicula odio. Proin tempus, justo nec aliquet
-          semper, leo sapien ultricies felis, ac tincidunt erat justo at odio.
-          Proin eget facilisis quam. Ut sagittis tempor commodo. Nulla non
-          condimentum orci. Orci varius natoque penatibus et magnis dis
-          parturient montes, nascetur ridiculus mus. Phasellus ex elit, auctor
-          in euismod at, tristique eu ligula. Praesent gravida malesuada dui,
-          quis condimentum quam. Maecenas nec aliquet nisl. Curabitur
-          condimentum convallis ante vel mattis. Sed accumsan tincidunt
-          tincidunt. Mauris molestie arcu leo, a pharetra nunc facilisis in. Ut
-          pellentesque eros lacus, quis malesuada ipsum faucibus ac. Aliquam sit
-          amet lacus massa. Donec interdum orci nec nunc porta commodo. Duis
-          felis urna, vehicula eu scelerisque non, volutpat et velit. Nulla
-          facilisi. Ut vel malesuada libero. Sed ut lorem vel enim pharetra
-          faucibus. Duis lorem nisi, commodo id est ac, pellentesque mattis
-          elit. Curabitur posuere lorem et ligula bibendum tempus. Nullam eget
-          metus urna. Praesent mattis elementum eros, non ultricies lectus
-          fermentum ac. Integer ornare tempus cursus. Vestibulum ultricies
-          maximus arcu ac placerat. Pellentesque purus augue, feugiat eget
-          bibendum et, tincidunt sit amet turpis. In vel est eget sem dignissim
-          laoreet. Mauris et massa id leo cursus vulputate vitae ac felis. Etiam
-          porta velit id nulla cursus, non euismod quam cursus. Aenean laoreet
-          felis nisi, in tempor libero convallis vitae. Aenean nisi mauris,
-          pretium vitae massa ultricies, venenatis ullamcorper dui. Nulla
-          facilisi. Quisque faucibus molestie tempus. Mauris sed arcu leo.
-          Suspendisse facilisis elit eget tellus viverra, ut consequat ipsum
-          dignissim. Ut a felis elementum, dapibus odio at, ultrices ante. Ut
-          cursus quis libero eget accumsan. Quisque turpis nisi, pellentesque
-          sit amet nisi vitae, vulputate fermentum dolor. Nunc gravida molestie
-          sapien nec commodo. Suspendisse hendrerit sed odio aliquet sodales.
-          Nunc dignissim finibus neque. Duis sit amet lectus leo.
-        </p>
+      <main className="pt-25 p-3" id="music">
+        {!currentTrack ? (
+          <section>
+            <h1>No Track Available.</h1>
+          </section>
+        ) : (
+          <section className="flex flex-col md:flex-row mx-auto max-w-250 gap-2 px-2">
+            <div className="flex-2">
+              <span className="text-left special-heading text-xl md:text-2xl inline-block mt-4 mb-10">
+                Checkout Demy Thekidd new release!
+              </span>
+              <div
+                id="release-info"
+                className="flex flex-col lg:flex-row md:gap-10"
+              >
+                <div id="release-card-top" className="">
+                  <div
+                    id="cover-image-cont"
+                    className="border border-white max-w-70 max-h-70 mx-auto"
+                  >
+                    <img
+                      className="w-full h-full object-contain"
+                      src={currentTrack.imageUrl}
+                      alt={`${currentTrack.title} Cover Image`}
+                    />
+                  </div>
+                  <span className="block mt-4 mb-10" id="track-title">
+                    <p>{currentTrack.title}</p>
+                  </span>
+                </div>
+                <div id="release-card-bottom" className="mb-8">
+                  <div
+                    id="streaming-links"
+                    className="flex flex-col gap-3 max-w-70 mx-auto"
+                  >
+                    <PlatformLink link={currentTrack.spotifyUrl}>
+                      <Spotify width={24} height={24} />
+                      Stream On Spotify
+                    </PlatformLink>
+                    <PlatformLink link={currentTrack.appleMusicUrl}>
+                      <SiApplemusic fill="#FA586A" size={24} />
+                      Stream On Apple Music
+                    </PlatformLink>
+                    <PlatformLink link={currentTrack.audioMackUrl}>
+                      <Audiomack width={24} height={24} />
+                      Stream On AudioMack
+                    </PlatformLink>
+                    <PlatformLink link={currentTrack.soundCloudUrl}>
+                      <Soundcloud width={24} height={24} />
+                      Stream On SoundCloud
+                    </PlatformLink>
+                    <PlatformLink link={currentTrack.youtubeUrl}>
+                      <Youtube width={24} height={24} />
+                      Stream On Youtube
+                    </PlatformLink>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              id="more-releases"
+              className="card flex-2 min-[550px]:flex-1 py-6 min-h-full"
+            >
+              <div id="singles-cont" className="mb-10">
+                <h2 style={{ marginBottom: "18px" }}>Singles</h2>
+                {/* Singles */}
+                {singles && singles.length > 0 ? (
+                  singles.map((track) => (
+                    <p style={{ marginBottom: "8px" }} key={track.slug}>
+                      <Link to={`/music/${track.slug}`}>{track.title}</Link>
+                    </p>
+                  ))
+                ) : (
+                  <p style={{ marginBottom: "8px" }}>No Single Yet.</p>
+                )}
+              </div>
+              <div id="album-cont">
+                <h2 style={{ marginBottom: "18px" }}>Album</h2>
+                {/* Albums */}
+                {albums && albums.length > 0 ? (
+                  albums.map((track) => (
+                    <p style={{ marginBottom: "8px" }} key={track.slug}>
+                      <Link to={`/music/${track.slug}`}>{track.title}</Link>
+                    </p>
+                  ))
+                ) : (
+                  <p style={{ marginBottom: "8px" }}>No Ablum Yet.</p>
+                )}
+              </div>
+            </div>
+          </section>
+        )}
       </main>
     </>
   );

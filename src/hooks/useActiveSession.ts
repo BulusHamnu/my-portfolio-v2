@@ -7,7 +7,7 @@ function useActiveSection(sectionIds: string[]) {
   const [activeSection, setActiveSection] = useState<string>(() => {
     return location.pathname === "/"
       ? "hero"
-      : location.pathname === "/music"
+      : location.pathname.includes("/music")
         ? "music"
         : "";
   });
