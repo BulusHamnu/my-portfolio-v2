@@ -247,6 +247,14 @@ footer {
   margin-top: auto;
 }
 
+.music-links {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 .music-links:hover {
   color: white;
   transition: color 0.5s linear;

@@ -20,6 +20,7 @@ import {
   FaSoundcloud,
 } from "react-icons/fa";
 import { FaMoneyBill } from "react-icons/fa";
+import { ArrowUpRight } from "lucide-react";
 
 /* Music Page */
 function PlatformLink({
@@ -132,36 +133,38 @@ function Music() {
             </motion.div>
             <div
               id="more-releases"
-              className="card flex-2 min-[550px]:flex-1 py-6 min-h-full"
+              className="flex gap-10 flex-col min-[440px]:flex-row min-[440px]:px-5 md:flex-col justify-between card flex-2 min-[550px]:flex-1 py-6 min-h-full"
             >
-              <div id="singles-cont" className="mb-10">
+              <div id="singles-cont" className="max-md:flex-1">
                 <h2 style={{ marginBottom: "18px" }}>Singles</h2>
                 {/* Singles */}
                 {singles && singles.length > 0 ? (
                   singles.map((track) => (
                     <p
-                      style={{ marginBottom: "8px" }}
+                      style={{ marginBottom: "14px" }}
                       key={track.slug}
                       className="music-links"
                     >
                       <Link to={`/music/${track.slug}`}>{track.title}</Link>
+                      <ArrowUpRight size={18} />
                     </p>
                   ))
                 ) : (
                   <p style={{ marginBottom: "8px" }}>No Single Yet.</p>
                 )}
               </div>
-              <div id="album-cont">
+              <div id="album-cont" className="flex-1">
                 <h2 style={{ marginBottom: "18px" }}>Album</h2>
                 {/* Albums */}
                 {albums && albums.length > 0 ? (
                   albums.map((track) => (
                     <p
-                      style={{ marginBottom: "8px" }}
+                      style={{ marginBottom: "14px" }}
                       key={track.slug}
                       className="music-links"
                     >
                       <Link to={`/music/${track.slug}`}>{track.title}</Link>
+                      <ArrowUpRight size={18} />
                     </p>
                   ))
                 ) : (
