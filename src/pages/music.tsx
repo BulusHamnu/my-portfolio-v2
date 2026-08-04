@@ -12,6 +12,7 @@ import Tracks, { getTrackBySlug } from "../data/music";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
+import { motion } from "motion/react";
 
 /* Music Page */
 function PlatformLink({
@@ -63,7 +64,14 @@ function Music() {
           </section>
         ) : (
           <section className="flex flex-col md:flex-row mx-auto max-w-250 gap-2 px-2">
-            <div className="flex-2">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.3 }}
+              key={currentTrack.slug}
+              id="current-track"
+              className="flex-2"
+            >
               <span className="text-left special-heading text-xl md:text-2xl inline-block mt-4 mb-10">
                 Checkout Demy Thekidd new release!
               </span>
@@ -72,16 +80,16 @@ function Music() {
                 className="flex flex-col lg:flex-row md:gap-10"
               >
                 <div id="release-card-top" className="">
-                  <div
+                  <motion.div
                     id="cover-image-cont"
-                    className="border border-white max-w-70 max-h-70 mx-auto"
+                    className="border border-white min-w-70 max-w-70 max-h-70 mx-auto"
                   >
-                    <img
+                    <motion.img
                       className="w-full h-full object-contain"
                       src={currentTrack.imageUrl}
                       alt={`${currentTrack.title} Cover Image`}
                     />
-                  </div>
+                  </motion.div>
                   <span className="block mt-4 mb-10" id="track-title">
                     <p>{currentTrack.title}</p>
                   </span>
@@ -114,7 +122,7 @@ function Music() {
                   </div>
                 </div>
               </div>
-            </div>
+            </motion.div>
             <div
               id="more-releases"
               className="card flex-2 min-[550px]:flex-1 py-6 min-h-full"
