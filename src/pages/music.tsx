@@ -13,6 +13,13 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 import { motion } from "motion/react";
+import {
+  FaInstagram,
+  FaYoutube,
+  FaSpotify,
+  FaSoundcloud,
+} from "react-icons/fa";
+import { FaMoneyBill } from "react-icons/fa";
 
 /* Music Page */
 function PlatformLink({
@@ -57,7 +64,7 @@ function Music() {
   return (
     <>
       <Header />
-      <main className="pt-25 p-3" id="music">
+      <main className="pt-25 p-3 max-lg:mb-20" id="music">
         {!currentTrack ? (
           <section>
             <h1>No Track Available.</h1>
@@ -132,7 +139,11 @@ function Music() {
                 {/* Singles */}
                 {singles && singles.length > 0 ? (
                   singles.map((track) => (
-                    <p style={{ marginBottom: "8px" }} key={track.slug}>
+                    <p
+                      style={{ marginBottom: "8px" }}
+                      key={track.slug}
+                      className="music-links"
+                    >
                       <Link to={`/music/${track.slug}`}>{track.title}</Link>
                     </p>
                   ))
@@ -145,7 +156,11 @@ function Music() {
                 {/* Albums */}
                 {albums && albums.length > 0 ? (
                   albums.map((track) => (
-                    <p style={{ marginBottom: "8px" }} key={track.slug}>
+                    <p
+                      style={{ marginBottom: "8px" }}
+                      key={track.slug}
+                      className="music-links"
+                    >
                       <Link to={`/music/${track.slug}`}>{track.title}</Link>
                     </p>
                   ))
@@ -157,6 +172,47 @@ function Music() {
           </section>
         )}
       </main>
+      <footer className="lg:mb-3 py-7 md:py-5 px-10 flex flex-col min-[600px]:flex-row min-[500px]:justify-between gap-10 items-center">
+        <a
+          href="#"
+          title="Help fund Yo Demy projects."
+          className="max-w-62.5 flex flex-row flex-nowrap gap-3 text-gray-900 p-3 w-full rounded bg-[#a0ecce] cursor-pointer"
+        >
+          Support Demy Thekidd <FaMoneyBill size={22} />
+        </a>
+        <div className="flex flex-row justify-between min-w-50 max-w-50 items-center">
+          <a
+            href="https://open.spotify.com/artist/60gF69GCzSyh9VbOAk5iQ0?si=EUcs8jguSj6BpegGnUYICw"
+            target="_blank"
+          >
+            <FaSpotify
+              className="hover:text-amber-500 transition-colors duration-300 hover:scale-110"
+              size={28}
+            />
+          </a>
+          <a
+            href="https://soundcloud.com/user-680998830-981257809"
+            target="_blank"
+          >
+            <FaSoundcloud
+              className="hover:text-amber-500 transition-colors duration-300 hover:scale-125"
+              size={28}
+            />
+          </a>
+          <a href="https://www.instagram.com/demy_thekidd" target="_blank">
+            <FaInstagram
+              className="hover:text-amber-500 transition-colors duration-300 hover:scale-125"
+              size={24}
+            />
+          </a>
+          <a href="http://www.youtube.com/@bulus_hamnu" target="_blank">
+            <FaYoutube
+              className="hover:text-amber-500 transition-colors duration-300 hover:scale-125"
+              size={33}
+            />
+          </a>
+        </div>
+      </footer>
     </>
   );
 }
