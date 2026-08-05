@@ -92,7 +92,7 @@ function ContactSection() {
       whileInView="visible"
       viewport={{ once: true }}
       id="contact"
-      className="p-3 mt-13 mb-20"
+      className="p-3"
     >
       <h2 className="section-heading text-left">Contact</h2>
       <p style={{ marginTop: "25px" }} className="text-left">

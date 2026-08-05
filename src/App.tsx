@@ -7,7 +7,7 @@ import TittleChanger from "./components/tittleChanger";
 /* Home */
 function App() {
   return (
-    <div className="container">
+    <div className="container space-y-20 md:space-y-24">
       <BrowserRouter>
         <ScrollToTop />
         <TittleChanger />

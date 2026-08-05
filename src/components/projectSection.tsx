@@ -30,7 +30,7 @@ function ProjectsSection() {
       whileInView="visible"
       viewport={{ once: true }}
       id="projects"
-      className="p-3 mt-13 mb-20"
+      className="p-3"
     >
       <h2 className="section-heading text-left">Projects</h2>
       <AnimatePresence mode="wait">
