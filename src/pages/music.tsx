@@ -90,7 +90,7 @@ function Music() {
                 <div id="release-card-top" className="">
                   <motion.div
                     id="cover-image-cont"
-                    className="border border-white min-w-70 max-w-70 max-h-70 mx-auto"
+                    className="border border-white min-w-70 max-w-70 min-h-70 max-h-70 mx-auto"
                   >
                     <motion.img
                       className="w-full h-full object-contain"
