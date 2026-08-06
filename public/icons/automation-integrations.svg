@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%" fill="none">
+  <!-- Automation & Integrations Icon: Gears with connecting arrows -->
+  <g stroke="#4ecdc4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Left Gear -->
+    <circle cx="50" cy="70" r="28" />
+    <circle cx="50" cy="70" r="18" />
+    <!-- Gear teeth -->
+    <line x1="50" y1="42" x2="50" y2="32" />
+    <line x1="50" y1="98" x2="50" y2="108" />
+    <line x1="22" y1="70" x2="12" y2="70" />
+    <line x1="78" y1="70" x2="88" y2="70" />
+    <!-- Diagonal teeth -->
+    <line x1="63" y1="57" x2="70" y2="50" />
+    <line x1="37" y1="83" x2="30" y2="90" />
+    <line x1="63" y1="83" x2="70" y2="90" />
+    <line x1="37" y1="57" x2="30" y2="50" />
+
+    <!-- Right Gear -->
+    <circle cx="150" cy="70" r="28" />
+    <circle cx="150" cy="70" r="18" />
+    <!-- Gear teeth -->
+    <line x1="150" y1="42" x2="150" y2="32" />
+    <line x1="150" y1="98" x2="150" y2="108" />
+    <line x1="122" y1="70" x2="112" y2="70" />
+    <line x1="178" y1="70" x2="188" y2="70" />
+    <!-- Diagonal teeth -->
+    <line x1="163" y1="57" x2="170" y2="50" />
+    <line x1="137" y1="83" x2="130" y2="90" />
+    <line x1="163" y1="83" x2="170" y2="90" />
+    <line x1="137" y1="57" x2="130" y2="50" />
+
+    <!-- Connecting arrows between gears -->
+    <!-- Arrow from left gear to right gear (top) -->
+    <path d="M 78 55 L 122 55" stroke="#ffffff" stroke-width="2" />
+    <polyline points="118,50 122,55 118,60" stroke="#ffffff" stroke-width="2" />
+
+    <!-- Arrow from right gear to left gear (bottom) -->
+    <path d="M 122 85 L 78 85" stroke="#ffffff" stroke-width="2" />
+    <polyline points="82,80 78,85 82,90" stroke="#ffffff" stroke-width="2" />
+
+    <!-- Center connection dot -->
+    <circle cx="100" cy="70" r="3" fill="#4ecdc4" stroke="none" />
+  </g>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="100%" height="100%">
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <!-- Credit Card Icon -->
+    <g transform="translate(20, 40)" stroke="#4ecdc4" stroke-width="2">
+      <!-- Card Body -->
+      <rect x="0" y="10" width="160" height="100" rx="10" />
+      <!-- Magnetic Strip / Top Bar -->
+      <line x1="0" y1="35" x2="160" y2="35" />
+      <!-- Chip -->
+      <rect x="20" y="55" width="24" height="18" rx="2" />
+      
+      <!-- Lock Symbol representing secure payment -->
+      <g transform="translate(110, 50)">
+        <rect x="2" y="15" width="24" height="18" rx="3" stroke-width="1.8" />
+        <path d="M8 15V8a8 8 0 0 1 16 0v7" stroke-width="1.8" />
+        <circle cx="14" cy="24" r="2" fill="#4ecdc4" stroke="none" />
+      </g>
+    </g>
+  </g>
+</svg>

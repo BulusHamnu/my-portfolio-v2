@@ -6,6 +6,7 @@ import AboutSection from "../components/aboutSection";
 import ContactSection from "../components/contactSection";
 import Footer from "../components/footer";
 import useScrollToHash from "../hooks/useScrollToHash";
+import ServicesSection from "../components/servicesSection";
 
 /* Home Page */
 function Home() {
@@ -15,6 +16,7 @@ function Home() {
     <>
       <Header />
       <HeroSection />
+      <ServicesSection />
       <ProjectsSection />
       <SkillsSection />
       <AboutSection />
