@@ -21,24 +21,22 @@ function HeroSection() {
       id="hero"
       className="pt-28 p-3"
     >
-      {/* <span
-        style={{ fontSize: "12px" }}
-        className="border-b-gray-700 px-4 py-1.5 rounded-2xl bg-gray-900 text-shadow-sm m-3"
-      >
-        Backend Developer
-      </span> */}
       <h1 className="md:text-left">
         Hi, I'm <span className="text-amber-500">Hamnu Bulus</span> <br />
         Madu
       </h1>
+      <h2 style={{ marginBottom: "20px" }} className="text-left">
+        Software Engineer building reliable web applications and backend
+        systems.
+      </h2>
       <p className="text-left sm:mx-2 leading-relaxed md:leading-snug lg:text-lg">
-        I build backend systems and APIs with Node.js. I like understanding how
-        things actually work, not just making them run. I focus on building
-        systems that are structured, reliable, and practical, and I’m always
-        improving how I approach backend development. If you’ve got something
-        interesting you’re building, feel free to reach out.
+        I enjoy understanding how systems work, not just making them work. I
+        focus on building clean, maintainable software that solves real-world
+        problems using modern backend and web technologies. I'm always
+        interested in working on meaningful products, whether joining a
+        development team or helping turn ideas into well-built software.
       </p>
-      <div className="m-3 lg:mx-0 lg:mt-8 mt-8 flex flex-col md:flex-row items-center md:justify-between p-2 lg:p-0">
+      <div className="m-3 lg:mx-0 lg:mt-12 mt-9 flex flex-col md:flex-row items-center md:justify-between p-2 lg:p-0">
         <div className="hero-btn-cont p-2 lg:p-0  flex flex-row gap-5 justify-center">
           <a href="#contact">
             <Button style="button-primary" text={"Contact"} Icon={Phone} />
