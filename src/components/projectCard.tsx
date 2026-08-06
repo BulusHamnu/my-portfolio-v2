@@ -36,15 +36,25 @@ function ProjectCard({ project }: { project: Project }) {
             <MoveUpRight size={18} />
           </button>
         </a>
-        {project.links.demoUrl ? (
-          <a href={project.links.demoUrl} className="w-full" target="_blank">
+        {project.links.liveUrls && (
+          <a
+            href={
+              project.links.liveUrls.type === "demo"
+                ? project.links.liveUrls.demoUrl
+                : project.links.liveUrls.docsUrl
+            }
+            className="w-full"
+            target="_blank"
+          >
             <button className="flex flex-row no-wrap gap-2 button-primary border rounded-sm px-5 lg:px-4 py-2 w-full cursor-pointer items-center justify-center text-sm md:text-lg">
-              <span>Live Demo</span>
+              <span>
+                {project.links.liveUrls.type === "demo"
+                  ? "Live Demo"
+                  : "API Docs"}
+              </span>
               <MoveUpRight size={18} />
             </button>
           </a>
-        ) : (
-          ""
         )}
       </div>
     </motion.div>

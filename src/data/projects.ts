@@ -6,7 +6,11 @@ export interface Project {
   techStack: string[];
   links: {
     githubUrl: string;
-    demoUrl: string | null;
+    liveUrls: {
+      type: "docs" | "demo";
+      demoUrl?: string;
+      docsUrl?: string;
+    } | null;
   };
 }
 
@@ -15,7 +19,7 @@ const projects: Project[] = [
     id: 1,
     title: "True Love App",
     description:
-      "A web app for couples to book consultations, join a 6-week transformation program, access relationship courses, and upgrade to 1-on-1 coaching. Built with Node.js/Express, Stripe, Resend, and Lovable for front-end.",
+      "Built the original Node.js/Express backend for a relationship coaching platform featuring authentication, Stripe payments, email workflows, and background jobs. The production application later migrated to a different backend, but this repository preserves my original implementation.",
     techStack: [
       "Node.js",
       "Stripe",
@@ -26,7 +30,10 @@ const projects: Project[] = [
     ],
     links: {
       githubUrl: "https://github.com/BulusHamnu/true-love-backend-nodejs",
-      demoUrl: "https://true-love.app/",
+      liveUrls: {
+        type: "docs",
+        docsUrl: "https://github.com/BulusHamnu/true-love-backend-nodejs",
+      },
     },
   },
   {
@@ -44,7 +51,10 @@ const projects: Project[] = [
     ],
     links: {
       githubUrl: "https://github.com/BulusHamnu/siwel-beats-app",
-      demoUrl: "https://siwel-beats.vercel.app/",
+      liveUrls: {
+        type: "demo",
+        demoUrl: "https://siwel-beats.vercel.app/",
+      },
     },
   },
   {
@@ -55,7 +65,10 @@ const projects: Project[] = [
     techStack: ["HTML", "CSS", "JavaScript", "Flask", "FlaskRestful"],
     links: {
       githubUrl: "https://github.com/BulusHamnu/readme-svg-projects-card",
-      demoUrl: "https://github.com/BulusHamnu/readme-svg-projects-card",
+      liveUrls: {
+        type: "docs",
+        docsUrl: "https://github.com/BulusHamnu/readme-svg-projects-card",
+      },
     },
   },
 ];
