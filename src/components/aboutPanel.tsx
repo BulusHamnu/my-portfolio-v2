@@ -11,17 +11,17 @@ function AboutPanel() {
     >
       <h3 className="text-lg md:text-2xl mt-3 mb-5">About Me 👨🏾‍💻</h3>
       <p>
-        I’m a backend-focused developer. I enjoy building systems and
-        understanding how things actually work under the hood.
+        I got into programming through curiosity about how computers, robotics,
+        and software work.
       </p>
       <p>
-        I got into programming through curiosity about robotics and how
-        computers work. That mindset still affects how I approach coding today.
+        I've always enjoyed understanding how things work beneath the surface
+        rather than simply using them. As I started building projects, I
+        realized software is more than just code.
       </p>
       <p>
-        Right now, I focus mainly on backend development using Node.js, MongoDB,
-        and API design. I also understand frontend tools like React, but backend
-        is where I’m strongest and where I’m going deeper.
+        Every application is a product created to solve a real problem, and that
+        perspective continues to shape how I approach building today.
       </p>
       <h3 className="text-lg md:text-2xl mt-3 mb-5">Interest 💡</h3>
       <p>

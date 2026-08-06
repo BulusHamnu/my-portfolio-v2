@@ -96,8 +96,8 @@ function ContactSection() {
     >
       <h2 className="section-heading text-left">Contact</h2>
       <p style={{ marginTop: "25px" }} className="text-left">
-        If you have a project, idea, or opportunity, feel free to reach out. I’m
-        always open to working on something interesting.
+        Have a project, idea, or business that needs software? I'd love to hear
+        about it. Feel free to reach out and let's discuss how I can help.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-5">
         <form
@@ -171,6 +171,9 @@ function ContactSection() {
             {submiting ? "Sending..." : "Send Message"}
           </motion.button>
           <Toaster />
+          <small className="text-left">
+            Typical response time: Within 24–48 hours.
+          </small>
         </form>
         <div className="contact-meduim mt-5 px-3">
           <h3
