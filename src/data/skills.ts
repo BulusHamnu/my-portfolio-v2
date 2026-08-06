@@ -7,7 +7,7 @@ import {
   Nodedotjs,
   Expressdotjs,
   React,
-  Flask,
+  // Flask,
   TailwindCss,
   Mongodb,
   // Postgresql,
@@ -16,7 +16,7 @@ import {
   Github,
   Linux,
   Figma,
-  //   AzureArcPostgresql,
+  AzureArcPostgresql,
 } from "@thesvg/react";
 
 export interface Skill {
@@ -45,19 +45,19 @@ export const languages: Skill[] = [
 
 export const frameworks: Skill[] = [
   {
-    name: "NodeJs",
+    name: "Node.js",
     icon: Nodedotjs,
   },
   {
-    name: "ExpressJS",
+    name: "Express",
     icon: Expressdotjs,
   },
+  // {
+  //   name: "Flask.py",
+  //   icon: Flask,
+  // },
   {
-    name: "Flask.py",
-    icon: Flask,
-  },
-  {
-    name: "ReactJS",
+    name: "React",
     icon: React,
   },
   {
@@ -75,10 +75,10 @@ export const databases: Skill[] = [
     name: "Redis",
     icon: Redis,
   },
-  //   {
-  //     name: "PostgreSQL",
-  //     icon: AzureArcPostgresql,
-  //   },
+  {
+    name: "PostgreSQL",
+    icon: AzureArcPostgresql,
+  },
 ];
 
 export const tools: Skill[] = [
