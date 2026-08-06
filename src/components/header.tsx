@@ -75,6 +75,7 @@ function Header() {
     "skills",
     "about",
     "music",
+    "services",
   ]);
 
   useEffect(() => {
@@ -135,6 +136,14 @@ function Header() {
               placeholder="Home"
               to="/#hero"
               sectionId="hero"
+              setIsOpen={setIsOpen}
+              activeSection={activeSection}
+            />
+            {/* Services */}
+            <LinkItem
+              placeholder="Services"
+              to="/#services"
+              sectionId="services"
               setIsOpen={setIsOpen}
               activeSection={activeSection}
             />
