@@ -7,6 +7,7 @@ import ContactSection from "../components/contactSection";
 import Footer from "../components/footer";
 import useScrollToHash from "../hooks/useScrollToHash";
 import ServicesSection from "../components/servicesSection";
+import Seo from "../components/seo";
 
 /* Home Page */
 function Home() {
@@ -14,6 +15,11 @@ function Home() {
 
   return (
     <>
+      <Seo
+        title="Bulus Hamnu | Software Engineer"
+        desc="Software engineer building reliable web applications, backend systems, APIs, and custom software for businesses and startups."
+        canonical="https://bulushamnu.com/"
+      />
       <Header />
       <HeroSection />
       <ServicesSection />

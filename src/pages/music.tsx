@@ -1,12 +1,6 @@
 import type { ReactNode } from "react";
 import Header from "../components/header";
-import {
-  Spotify,
-  // AppleMusic,
-  Soundcloud,
-  Audiomack,
-  Youtube,
-} from "@thesvg/react";
+import { Spotify, Soundcloud, Audiomack, Youtube } from "@thesvg/react";
 import { SiApplemusic } from "react-icons/si";
 import Tracks, { getTrackBySlug } from "../data/music";
 import { useEffect, useState } from "react";
@@ -21,6 +15,7 @@ import {
 } from "react-icons/fa";
 import { FaMoneyBill } from "react-icons/fa";
 import { ArrowUpRight } from "lucide-react";
+import Seo from "../components/seo";
 
 /* Music Page */
 function PlatformLink({
@@ -64,6 +59,11 @@ function Music() {
 
   return (
     <>
+      <Seo
+        title="Music | Bulus Hamnu"
+        desc="Explore music by Bulus Hamnu, listen to released tracks, and discover where to stream them."
+        canonical="https://bulushamnu.com/music"
+      ></Seo>
       <Header />
       <main className="pt-25 p-3 max-lg:mb-20" id="music">
         {!currentTrack ? (
