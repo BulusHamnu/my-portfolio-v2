@@ -57,17 +57,31 @@ const projects: Project[] = [
       },
     },
   },
+  // {
+  //   id: 3,
+  //   title: "Svg Projects Card",
+  //   description:
+  //     "An elegant API that queries GitHub repositories and generates beautiful SVG visualizations that you can embed anywhere - perfect for your README profiles.",
+  //   techStack: ["HTML", "CSS", "JavaScript", "Flask", "FlaskRestful"],
+  //   links: {
+  //     githubUrl: "https://github.com/BulusHamnu/readme-svg-projects-card",
+  //     liveUrls: {
+  //       type: "docs",
+  //       docsUrl: "https://github.com/BulusHamnu/readme-svg-projects-card",
+  //     },
+  //   },
+  // },
   {
-    id: 3,
-    title: "Svg Projects Card",
+    id: 4,
+    title: "EE Portfolio Website",
     description:
-      "An elegant API that queries GitHub repositories and generates beautiful SVG visualizations that you can embed anywhere - perfect for your README profiles.",
-    techStack: ["HTML", "CSS", "JavaScript", "Flask", "FlaskRestful"],
+      "A personal portfolio website for a consultant, featuring his consulting services, courses, Full Moon Program, Boodi.AI, and curated resources for personal growth. Includes responsive design, multiple color themes, scroll animations, and a contact form. Built with HTML5, CSS, and JavaScript.",
+    techStack: ["ReactJS", "TailwindCSS", "TypeScript", "Framer Motion"],
     links: {
-      githubUrl: "https://github.com/BulusHamnu/readme-svg-projects-card",
+      githubUrl: "https://github.com/BulusHamnu/exponential-enlightenment",
       liveUrls: {
-        type: "docs",
-        docsUrl: "https://github.com/BulusHamnu/readme-svg-projects-card",
+        type: "demo",
+        demoUrl: "https://exponentialenlightenment.vercel.app/",
       },
     },
   },
