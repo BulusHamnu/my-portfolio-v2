@@ -62,7 +62,7 @@ function Music() {
       <Seo
         title="Music | Bulus Hamnu"
         desc="Explore music by Bulus Hamnu, listen to released tracks, and discover where to stream them."
-        canonical="https://bulushamnu.com/music"
+        canonical="https://www.bulushamnu.com/music"
       ></Seo>
       <Header />
       <main className="pt-25 p-3 max-lg:mb-20" id="music">

@@ -16,7 +16,7 @@ function Seo({
   canonical,
   type = "website",
   siteName = "Bulus Hamnu",
-  image = "https://bulushamnu.com/logo.png",
+  image = "https://www.bulushamnu.com/logo.png",
 }: SeoProps) {
   return (
     <Helmet>

@@ -18,7 +18,7 @@ function Home() {
       <Seo
         title="Bulus Hamnu | Software Engineer"
         desc="Software engineer building reliable web applications, backend systems, APIs, and custom software for businesses and startups."
-        canonical="https://bulushamnu.com/"
+        canonical="https://www.bulushamnu.com/"
       />
       <Header />
       <HeroSection />
