@@ -10,7 +10,7 @@ export const expriences: Timeline[] = [
       "Worked closely with the founder on building and refining product ideas, contributing to technical planning, system structure, and application workflows across multiple projects. Built and managed application functionality, including backend system integration, Stripe payment integration, email sending workflows, serverless functions, notification flows, and backend service integration using Lovable and Node.js. Contributed to rapid product development by helping design application architecture, technical flows, and scalable feature structures for internal tools, landing pages, and digital product platforms.",
   },
   {
-    date: "2022 - Present",
+    date: "2023 - Present",
     title: "Backend Developer (Personal Projects)",
     organization: "Independent",
     description:

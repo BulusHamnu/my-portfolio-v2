@@ -55,17 +55,14 @@ function HeroSection() {
               size={28}
             />
           </a>
-          <a
-            href="https://www.linkedin.com/in/bulus-hamnu-a2850a23b"
-            target="_blank"
-          >
+          <a href="https://www.linkedin.com/in/bulus-hamnu" target="_blank">
             <FaLinkedin
               className="hover:text-amber-500 transition-colors duration-300 hover:scale-125"
               size={28}
             />
           </a>
           <a
-            href="https://x.com/bulushamnu?t=DruMHErbK2GRXdyNzD5pEw&s=09"
+            href="https://x.com/bulushamnu"
             target="_blank"
           >
             <SiX
@@ -73,7 +70,7 @@ function HeroSection() {
               size={24}
             />
           </a>
-          <a href="https://youtube.com/@bulus_hamnu" target="_blank">
+          <a href="http://www.youtube.com/@bulushamnu" target="_blank">
             <FaYoutube
               className="hover:text-amber-500 transition-colors duration-300 hover:scale-125"
               size={33}

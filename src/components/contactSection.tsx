@@ -191,17 +191,17 @@ function ContactSection() {
             <SocialLink
               Icon={FaInstagram}
               text="INSTAGRAM"
-              to="https://www.instagram.com/demy_thekidd"
+              to="https://www.instagram.com/hamnu.bulus/"
             />
             <SocialLink
               Icon={SiX}
               text="TWITTER"
-              to="https://x.com/bulushamnu?t=DruMHErbK2GRXdyNzD5pEw&s=09"
+              to="https://x.com/bulushamnu"
             />
             <SocialLink
               Icon={FaYoutube}
               text="YOUTUBE"
-              to="https://youtube.com/@bulus_hamnu"
+              to="http://www.youtube.com/@bulushamnu"
             />
             <SocialLink
               Icon={FaGithub}
@@ -211,7 +211,7 @@ function ContactSection() {
             <SocialLink
               Icon={FaLinkedin}
               text="LINKEDIN"
-              to="https://www.linkedin.com/in/bulus-hamnu-a2850a23b"
+              to="https://www.linkedin.com/in/bulus-hamnu"
             />
           </div>
         </div>
