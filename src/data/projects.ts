@@ -72,7 +72,7 @@ const projects: Project[] = [
   //   },
   // },
   {
-    id: 4,
+    id: 3,
     title: "EE Portfolio Website",
     description:
       "A personal portfolio website for a consultant, featuring his consulting services, courses, Full Moon Program, Boodi.AI, and curated resources for personal growth. Includes responsive design, multiple color themes, scroll animations, and a contact form. Built with HTML5, CSS, and JavaScript.",

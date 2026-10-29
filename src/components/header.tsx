@@ -179,6 +179,19 @@ function Header() {
               setIsOpen={setIsOpen}
               activeSection={activeSection}
             />
+            {/* Store */}
+            <li className="nav-link-item text-left">
+              <NavLink
+                target="_blank"
+                to="https://store.bulushamnu.com/"
+                onClick={() => setIsOpen(false)}
+                className={
+                  "w-full block md:inline px-2 py-4 md:p-0 cursor-pointer"
+                }
+              >
+                Store
+              </NavLink>
+            </li>
             {/* Contact */}
             <li
               onClick={() => contactLinkRef.current?.click()}
